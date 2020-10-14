@@ -24,5 +24,7 @@ Make your first Pull Request and earn a free tee from GitHub!
 - See the issues from the https://github.com/indeplot/indeplot/issues and comment and ask for   working
 - After your assigned work do the following
 - Add your files (`git add -A`), commit (`git commit -m "added myself"`) and push (`git push origin new-user`)
-- Create a pull request
+- Create a pull request to the `develop` branch
 - Star this repository
+
+* See the [Contributing Guidelines] For more info(https://github.com/indeplot/indeplot/blob/master/CONTRIBUTING.md)
