@@ -2,7 +2,7 @@
 name: New work
 about: 'This is for the new work assignment for the project indeplot '
 title: "[New Work]"
-labels: enhancement
+labels: enhancement, feature
 assignees: ''
 
 ---
