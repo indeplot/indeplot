@@ -1,11 +1,9 @@
-# Collaborate in this project with Hacktoberfest2020.
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+# Collaborate with Indebot community.
 
 
-<img src='src/assets/logo.png' width="300px" height="220" align="centre" alt="Indebot logo" style="display: block; margin-left: auto;
-margin-right: auto;"/>
+
+<img src='src/assets/logo.png' height="225" align="centre" alt="Indebot logo" style="display: block; margin-left: auto;
+margin-right: auto; width:50%"/>
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
