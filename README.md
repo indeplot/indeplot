@@ -1,9 +1,9 @@
-# Collaborate with Indebot community.
+# Collaborate with Indeplot community.
 
 
-
-<img src='src/assets/logo.png' height="225" align="centre" alt="Indebot logo" style="display: block; margin-left: auto;
-margin-right: auto; width:50%"/>
+<p align="center">
+<img src='src/assets/logo.png' width="300px" height="220" align="centre" alt="Indebot logo"/>
+</p>
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
