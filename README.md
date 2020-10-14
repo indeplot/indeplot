@@ -3,10 +3,14 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-Make your first Pull Request and earn a free tee from GitHub!
 
-![Hacktoberfest 2020](hacktoberfest2020.png)
+<img src='src/assets/logo.png' width="300px" height="220" align="centre" alt="Indebot logo" style="display: block; margin-left: auto;
+margin-right: auto;"/>
 
+
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
    <img alt="GitHub issues" src="https://img.shields.io/github/issues/indeplot/indeplot"></a>
@@ -15,6 +19,16 @@ Make your first Pull Request and earn a free tee from GitHub!
    <img alt="Github license" src="https://img.shields.io/github/license/indeplot/indeplot"></a>
 </p>
 # Welcome to GitHub!
+
+
+Make your first Pull Request and earn a free tee from GitHub!
+
+# Indeplot is now part of Hacktoberfest2020.
+
+![Hacktoberfest 2020](hacktoberfest2020.png)
+
+
+
 
 ## This project is perfect for your first pull request
 
