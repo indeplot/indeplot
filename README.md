@@ -1,4 +1,7 @@
 # Collaborate in this project with Hacktoberfest2020.
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Make your first Pull Request and earn a free tee from GitHub!
 
@@ -27,4 +30,25 @@ Make your first Pull Request and earn a free tee from GitHub!
 - Create a pull request to the `develop` branch
 - Star this repository
 
-* See the [Contributing Guidelines] For more info(https://github.com/indeplot/indeplot/blob/master/CONTRIBUTING.md)
+* See the [Contributing Guidelines](https://github.com/indeplot/indeplot/blob/master/CONTRIBUTING.md) For more info.
+
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/ayan-biswas0412"><img src="https://avatars1.githubusercontent.com/u/52851184?v=4?s=100" width="100px;" alt=""/><br /><sub><b>AYAN BISWAS</b></sub></a><br /><a href="#infra-ayan-biswas0412" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
