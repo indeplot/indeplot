@@ -18,7 +18,17 @@
       "contributions": [
         "infra"
       ]
+    },
+    {
+      "login": "pearlpandz",
+      "name": "Muthupandi V",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/12746886?v=4",
+      "profile": "https://dribbble.com/pearlpandz",
+      "contributions": [
+        "design"
+      ]
     }
   ],
-  "contributorsPerLine": 7
+  "contributorsPerLine": 7,
+  "skipCi": true
 }

@@ -1,4 +1,7 @@
-# Collaborate in Indeplot with the Indeplot community.
+# Collaborate in this project with Hacktoberfest2020.
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
 <img src='src/assets/logo.png' width="300px" height="220" align="centre" alt="Indebot logo" style="display: block; margin-left: auto;
