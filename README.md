@@ -27,4 +27,4 @@ Make your first Pull Request and earn a free tee from GitHub!
 - Create a pull request to the `develop` branch
 - Star this repository
 
-* See the [Contributing Guidelines] For more info(https://github.com/indeplot/indeplot/blob/master/CONTRIBUTING.md)
+* See the [Contributing Guidelines](https://github.com/indeplot/indeplot/blob/master/CONTRIBUTING.md) For more info.
