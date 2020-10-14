@@ -1,5 +1,7 @@
 {
-  "files": ["README.md"],
+  "files": [
+    "README.md"
+  ],
   "imageSize": 100,
   "contributorsPerLine": 7,
   "contributorsSortAlphabetically": false,
@@ -12,6 +14,22 @@
       "link": "[<%= symbol %>](<%= url %> \"<%= description %>\"),"
     }
   },
-  "skipCi": "true",
-  "contributors": []
+  "skipCi": true,
+  "contributors": [
+    {
+      "login": "ayan-biswas0412",
+      "name": "AYAN BISWAS",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/52851184?v=4",
+      "profile": "http://www.ayanbiswas.me",
+      "contributions": [
+        "infra",
+        "test",
+        "code"
+      ]
+    }
+  ],
+  "projectName": "indeplot",
+  "projectOwner": "indeplot",
+  "repoType": "github",
+  "repoHost": "https://github.com"
 }
