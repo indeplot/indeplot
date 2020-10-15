@@ -27,6 +27,15 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "femakin",
+      "name": "femakin",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/46872764?v=4",
+      "profile": "https://github.com/femakin",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
