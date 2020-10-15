@@ -1,6 +1,6 @@
 import React from 'react';
-import { Container,Row,Col } from 'react-bootstrap';
-import Footer from './Footer';
+import {Row,Col } from 'react-bootstrap';
+import Footer from '../../Components/Footer';
 
 class HomePage extends React.Component {
     render() {
