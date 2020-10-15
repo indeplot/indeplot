@@ -16,21 +16,11 @@
    <img alt="GitHub stars" src="https://img.shields.io/github/stars/indeplot/indeplot"></a>
    <img alt="Github license" src="https://img.shields.io/github/license/indeplot/indeplot"></a>
 </p>
-# Welcome to GitHub!
 
 
-Make your first Pull Request and earn a free tee from GitHub!
+### This project is perfect for your first pull request
 
-# Indeplot is now part of Hacktoberfest2020.
-
-![Hacktoberfest 2020](hacktoberfest2020.png)
-
-
-
-
-## This project is perfect for your first pull request
-
-## Instructions-
+### Instructions-
 
 - Fork this Repository using the button at the top
 - Clone your forked repository to your pc ( git clone ```'git@github.com:indeplot/indeplot.git'```)
@@ -64,3 +54,10 @@ Thanks goes to these wonderful people who make this big
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome ,also please discover issues and star the repository if you like it!
+
+## Indeplot is now part of Hacktoberfest 2020.
+
+### Welcome to GitHub!
+Make your first Pull Request and earn a free tee from GitHub!
+
+![Hacktoberfest 2020](hacktoberfest2020.png)
