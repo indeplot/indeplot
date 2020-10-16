@@ -1,7 +1,7 @@
 import React from 'react';
 import {Row,Col } from 'react-bootstrap';
 import Footer from '../../Components/Footer';
-import Navbar from '../../Components/Navbar';
+import Navbar from '../../Components/Navbarr';
 
 class HomePage extends React.Component {
     render() {
