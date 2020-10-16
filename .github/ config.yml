@@ -1,0 +1,34 @@
+# Comment to be posted to on first time issues
+newIssueWelcomeComment: |
+  Thanks for opening your first issue!
+  Kindly note that this repository is maintained by [Ayan Biswas](https://www.linkedin.com/in/ayan-biswas0412/).
+  He'll get back to you soon.
+
+# Comment to be posted to on PRs from first time contributors in your repository
+newPRWelcomeComment: |
+ Thanks for opening this pull request! 🤗
+ Wishing you a great open source journey 🙌 🎉 ⚡️
+ **Are you looking for more beginner-friendly issues? Check out [this](https://github.com/indeplot/indeplot/issues) repo.**
+
+ 📢 Spread the word about [@indeplot/Hacktoberfest2020](https://github.com/indeplot/indeplot) repo across your social media channels to help get others involved!
+
+ [![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ayan-biswas0412)
+
+ **Check out few other repos below** 🚀
+
+
+ **Show some ❤️**
+    - Consider leaving a ⭐ [here](https://github.com/indeplot/indeplot).
+    - Check out more beginner-friendly issues [here](https://github.com/indeplot/indeplot/issues).
+    - Follow @indeplot for more updates.
+
+
+
+ PS: Please add @ayan-biswas0412 as a reviewer if you haven't added.
+
+
+# Comment to be posted to on pull requests merged by a first time user
+firstPRMergeComment: |
+ Congrats on merging your first pull request! 🙌🎉⚡️
+ Check out more beginner-friendly issues [here](https://github.com/indeplot/indeplot/issues).
+ Make as many as PR against available issues.
