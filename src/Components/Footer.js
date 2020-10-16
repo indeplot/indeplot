@@ -57,8 +57,8 @@ export default function Footer() {
     {/* Footer Bottom */}
     <div className="footer-bottom">
 <p className="text-xs-center">
-&copy:{new Date().getFullYear()} <img height={50} src={logo} alt="logo"/> App - All Rights Reserved
-</p>  
+&copy; {new Date().getFullYear()} <img height={50} src={logo} alt="logo"/> Indeplot - All Rights Reserved
+</p>
 {/* <img height={50} src={logo} alt="logo"/> */}
     </div>
 </div>
@@ -86,7 +86,7 @@ h4{
 }
 
 ul li a {
-    
+
     color: var(--mainSilverGrey);
 }
 

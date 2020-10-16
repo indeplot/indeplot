@@ -7,7 +7,7 @@
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -32,6 +32,50 @@
 - Create a pull request to the `develop` branch
 - Star this repository
 
+#### If your branch is not fully updated with the develop branch please follow the below instructions before making any PR
+
+>CAUTION: Synch up your local repo with [original repo](https://github.com/indeplot/indeplot) (Upstream) before pushing your commits.
+>This avoids unnecessary conflicts during the merge.
+
+>NOTE: You can do so by adding a [remote handler](https://www.atlassian.com/de/git/tutorials/syncing) reference to the original repo and pull the changes from the respective branch.
+>Resolve the [merge-conflicts](https://www.atlassian.com/de/git/tutorials/using-branches/merge-conflicts) if any.
+
+
+>```bash
+>#Add upstream repo
+>git remote add upstream https://github.com/indeplot/indeplot.git
+>
+>#Disable accidental push to the upstream
+>git remote set-url --push upstream DISABLE
+>
+>#List the remote repo and fetch references
+>git remote -v && git fetch upstream
+>
+>#Check for any new commits in the upstream branch
+>git log HEAD..upstream/master #No output indicates, upstream has not moved ahead
+>
+>#See the patch difference between local and upstream branch
+>git diff -p HEAD..upstream/master
+>
+>```
+
+>CAUTION: If the upstream has moved ahead, rebase your commit and resolve conflicts if any. [Skip otherwise]
+>```bash
+>git rebase upstream/master
+>```
+>
+
+**7.** Push your local commits to the remote repo.
+
+```bash
+git push -u origin <your_branch_name>
+```
+
+**8.** Create a [PR](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request) !
+
+**9.** **Congratulations!** Sit and relax, you've made your contribution to [Indeplot](https://github.com/indeplot/indeplot) project.
+
+
 * See the [Contributing Guidelines](https://github.com/indeplot/indeplot/blob/master/CONTRIBUTING.md) For more info.
 
 
@@ -46,6 +90,7 @@ Thanks goes to these wonderful people who make this big
   <tr>
     <td align="center"><a href="https://github.com/ayan-biswas0412"><img src="https://avatars1.githubusercontent.com/u/52851184?v=4" width="100px;" alt=""/><br /><sub><b>AYAN BISWAS</b></sub></a><br /><a href="#infra-ayan-biswas0412" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     <td align="center"><a href="https://dribbble.com/pearlpandz"><img src="https://avatars2.githubusercontent.com/u/12746886?v=4" width="100px;" alt=""/><br /><sub><b>Muthupandi V</b></sub></a><br /><a href="#design-pearlpandz" title="Design">🎨</a></td>
+    <td align="center"><a href="https://github.com/femakin"><img src="https://avatars3.githubusercontent.com/u/46872764?v=4" width="100px;" alt=""/><br /><sub><b>femakin</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=femakin" title="Code">💻</a></td>
   </tr>
 </table>
 
