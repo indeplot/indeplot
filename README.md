@@ -2,7 +2,7 @@
 
 
 <p align="center">
-<img src='src/assets/logo.png' width="300px" height="220" align="centre" alt="Indebot logo"/>
+<img src='src/Assets/Images/logo.png' width="300px" height="220" align="centre" alt="Indebot logo"/>
 </p>
 
 
@@ -17,6 +17,12 @@
    <img alt="Github license" src="https://img.shields.io/github/license/indeplot/indeplot"></a>
 </p>
 
+## Indeplot is now part of Hacktoberfest 2020.
+
+### Welcome to GitHub!
+Make your first Pull Request and earn a free tee from GitHub!
+
+![Hacktoberfest 2020](hacktoberfest2020.png)
 
 ### This project is perfect for your first pull request
 
@@ -111,9 +117,3 @@ Thanks goes to these wonderful people who make this big
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome ,also please discover issues and star the repository if you like it!
 
-## Indeplot is now part of Hacktoberfest 2020.
-
-### Welcome to GitHub!
-Make your first Pull Request and earn a free tee from GitHub!
-
-![Hacktoberfest 2020](hacktoberfest2020.png)
