@@ -14,7 +14,7 @@ export default function Navbarr() {
     </ReactBootStrap.Nav>
     <ReactBootStrap.Nav>
     <ReactBootStrap.Form inline>
-      <ReactBootStrap.FormControl type="text" placeholder="Search" className="mr-sm-2" />
+      <ReactBootStrap.FormControl type="text" placeholder="Search" className="mr-sm-2 mb-3 mb-md-0" />
       <ReactBootStrap.Button variant="outline-primary">Search</ReactBootStrap.Button>
     </ReactBootStrap.Form>
     </ReactBootStrap.Nav>
