@@ -29,7 +29,7 @@
 - See the issues from the https://github.com/indeplot/indeplot/issues and comment and ask for   working
 - After your assigned work do the following
 - Add your files (`git add -A`), commit (`git commit -m "added myself"`) and push (`git push origin new-user`)
-- Create a pull request to the `develop` branch
+- Create a pull request to the `develop` branch and your pull request title must contain `[dev]` keyword and your work short title
 - Star this repository
 
 #### If your branch is not fully updated with the develop branch please follow the below instructions before making any PR
@@ -77,6 +77,16 @@ git push -u origin <your_branch_name>
 
 
 * See the [Contributing Guidelines](https://github.com/indeplot/indeplot/blob/master/CONTRIBUTING.md) For more info.
+
+## Maintainers ✨
+
+Thanks goes to these wonderful people who are maintaining the project.
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/ayan-biswas0412"><img src="https://avatars1.githubusercontent.com/u/52851184?v=4" width="100px;" alt=""/><br /><sub><b>AYAN BISWAS</b></sub></a><br /><a href="#infra-ayan-biswas0412" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+  </tr>
+</table>
 
 
 ## Contributors ✨
