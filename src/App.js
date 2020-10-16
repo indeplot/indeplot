@@ -8,10 +8,11 @@ import {  HomePage } from './pages'
 
 function App() {
   return (
+   
     <Router>
-
       <Route path='/' exact component={HomePage} />
     </Router>
+    
   );
 }
 
