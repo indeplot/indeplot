@@ -1,11 +1,11 @@
 # Comment to be posted to on first time issues
-newIssueWelcomeComment: |
+newIssueWelcomeComment: >
   Thanks for opening your first issue!
   Kindly note that this repository is maintained by [Ayan Biswas](https://www.linkedin.com/in/ayan-biswas0412/).
   He'll get back to you soon.
 
 # Comment to be posted to on PRs from first time contributors in your repository
-newPRWelcomeComment: |
+newPRWelcomeComment: >
  Thanks for opening this pull request! 🤗
  Wishing you a great open source journey 🙌 🎉 ⚡️
  **Are you looking for more beginner-friendly issues? Check out [this](https://github.com/indeplot/indeplot/issues) repo.**
@@ -28,7 +28,7 @@ newPRWelcomeComment: |
 
 
 # Comment to be posted to on pull requests merged by a first time user
-firstPRMergeComment: |
+firstPRMergeComment: >
  Congrats on merging your first pull request! 🙌🎉⚡️
  Check out more beginner-friendly issues [here](https://github.com/indeplot/indeplot/issues).
  Make as many as PR against available issues.
