@@ -20,6 +20,7 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
 5. Make sure your code lints.
 6. Issue that pull request!
 7. Make all your PRs with the `develop` branch
+8. Create a pull request to the `develop` branch and your pull request title must contain `[dev]` keyword and your work short title
 
 ## Any contributions you make will be under the  GNU GENERAL PUBLIC LICENSE v3
 In short, when you submit code changes, your submissions are understood to be under the same [ GNU GENERAL PUBLIC LICENSE v3](https://github.com/indeplot/indeplot/blob/master/LICENSE) that covers the project. Feel free to contact the maintainers if that's a concern.
