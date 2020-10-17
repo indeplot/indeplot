@@ -1,0 +1,5 @@
+exclude:
+    - dev-internal
+    - develop
+
+  delete_closed_pr: true
