@@ -25,10 +25,10 @@ class HomePage extends React.Component {
                 </Row>
                 <div className="container-fluid">
                     <div className="row">
-                        <div className="col-sm-6 bg-success">
+                        <div className="col-sm-6">
                             <Charts chartType="Line" labels={this.state.labels} title="Sample 1" data={this.state.data} options={{}} />
                         </div>  
-                        <div className="col-sm-6 bg-warning">
+                        <div className="col-sm-6">
                             <Charts chartType="Bar" labels={this.state.labels} title="Sample 2" data={this.state.data} options={{}} />
                         </div>  
                     </div>
