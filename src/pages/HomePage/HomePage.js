@@ -47,7 +47,7 @@ class HomePage extends React.Component {
                   />
                 </div>
               </div>
-              <div className="col-sm-12">
+              <div style={{marginBottom: '16px', border: '1px solid #eee', borderRadius: '8px', padding: '8px'}} className="col-sm-12">
                 <CodeEditor />
               </div>
             </div>

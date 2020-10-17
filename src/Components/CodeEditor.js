@@ -36,12 +36,13 @@ class CodeEditor extends Component {
 
         return (
           <div className="code">
+            <h1>{"</> Editor"}</h1>
             <div>
               <form>
                 <select
                   className="custom-select mr-sm-2 col-sm-2"
                   id="language"
-                  style={{marginTop: '4px'}}
+                  style={{marginTop: '2px'}}
                   onChange={(e) => this.setState({lang: e.target.value})}
                   value={this.state.lang}
                 >
@@ -54,7 +55,7 @@ class CodeEditor extends Component {
                 <select
                   className="custom-select mr-sm-2 col-sm-2"
                   id="theme"
-                  style={{marginTop: '4px'}}
+                  style={{marginTop: '2px'}}
                   onChange={(e) => this.setState({theme: e.target.value})}
                   value={this.state.theme}
                 >
@@ -65,12 +66,12 @@ class CodeEditor extends Component {
                   <option value="twilight">Twilight</option>
                 </select>
                 <input
-                  style={{margin: '4px'}}
+                  style={{margin: '2px'}}
                   type="checkbox"
                   onChange={() => this.setState({wrap: !this.state.wrap})}
                   id="wrap"
                 />
-                <label style={{margin: '4px'}} htmlFor="wrap">
+                <label style={{margin: '2px'}} htmlFor="wrap">
                   {' '}
                   Text wrap
                 </label>
