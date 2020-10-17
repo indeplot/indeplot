@@ -14,6 +14,7 @@ class HomePage extends React.Component {
                 'SampleX4']
         }
     }
+
     render() {
         return (
 
@@ -22,12 +23,14 @@ class HomePage extends React.Component {
                 <Row>
                     <Col>This is is the Home Page and This coding style should be followed</Col>
                 </Row>
-                <div style={{ display: "flex" }}>
-                    <div style={{ flex: 1 }}>
-                        <Charts chartType="Line" labels={this.state.labels} title="Sample 1" data={this.state.data} options={{}} />
-                    </div>
-                    <div style={{ flex: 1 }}>
-                        <Charts chartType="Bar" labels={this.state.labels} title="Sample 2" data={this.state.data} options={{}} />
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-sm-6">
+                            <Charts chartType="Line" labels={this.state.labels} title="Sample 1" data={this.state.data} options={{}} />
+                        </div>  
+                        <div className="col-sm-6">
+                            <Charts chartType="Bar" labels={this.state.labels} title="Sample 2" data={this.state.data} options={{}} />
+                        </div>  
                     </div>
                 </div>
                 <Footer />
