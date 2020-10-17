@@ -65,6 +65,9 @@ class CodeEditor extends Component {
                   <option value="eclipse">Eclipse</option>
                   <option value="twilight">Twilight</option>
                 </select>
+                
+                <button type='button' className="btn btn-primary" style={{ margin: '2px 8px 2px 8px'}}>Run</button>
+
                 <input
                   style={{margin: '2px'}}
                   type="checkbox"
