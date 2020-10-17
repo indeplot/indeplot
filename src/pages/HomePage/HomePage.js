@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap';
 import Charts from '../Charts/Charts'
 import Footer from '../../Components/Footer';
 import Navbar from '../../Components/Navbarr';
+import CodeEditor from '../../Components/CodeEditor';
 
 class HomePage extends React.Component {
 
@@ -17,25 +18,42 @@ class HomePage extends React.Component {
 
     render() {
         return (
-
-            <div>
-                <Navbar />
-                <Row>
-                    <Col>This is is the Home Page and This coding style should be followed</Col>
-                </Row>
-                <div className="container-fluid">
-                    <div className="row">
-                        <div className="col-sm-6">
-                            <Charts chartType="Line" labels={this.state.labels} title="Sample 1" data={this.state.data} options={{}} />
-                        </div>  
-                        <div className="col-sm-6">
-                            <Charts chartType="Bar" labels={this.state.labels} title="Sample 2" data={this.state.data} options={{}} />
-                        </div>  
-                    </div>
+          <div>
+            <Navbar />
+            <Row>
+              <Col>
+                This is is the Home Page and This coding style should be
+                followed
+              </Col>
+            </Row>
+            <div className="container-fluid">
+              <div className="row">
+                <div className="col-sm-6">
+                  <Charts
+                    chartType="Line"
+                    labels={this.state.labels}
+                    title="Sample 1"
+                    data={this.state.data}
+                    options={{}}
+                  />
                 </div>
-                <Footer />
+                <div className="col-sm-6">
+                  <Charts
+                    chartType="Bar"
+                    labels={this.state.labels}
+                    title="Sample 2"
+                    data={this.state.data}
+                    options={{}}
+                  />
+                </div>
+              </div>
+              <div className="col-sm-12">
+                <CodeEditor />
+              </div>
             </div>
-        )
+            <Footer />
+          </div>
+        );
     }
 }
 
