@@ -63,6 +63,24 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "ankit-rawani",
+      "name": "Ankit Rawani",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/58520092?v=4",
+      "profile": "https://github.com/ankit-rawani",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "sprakash57",
+      "name": "Sunny Praksah",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/38065786?v=4",
+      "profile": "https://suprdev.netlify.app",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
