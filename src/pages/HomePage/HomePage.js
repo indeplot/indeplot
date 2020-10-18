@@ -3,6 +3,7 @@ import { Row, Col, Container } from 'react-bootstrap';
 import Footer from '../../Components/Footer';
 import Navbar from '../../Components/Navbarr';
 import ChartSelector from '../../Components/ChartSelector';
+import CodeEditor from '../../Components/CodeEditor';
 
 class HomePage extends React.Component {
 
@@ -25,9 +26,12 @@ class HomePage extends React.Component {
                     </Row>
                 </Container>
                 <ChartSelector data={data} labels={labels} />
+                <div style={{marginBottom: '16px', border: '1px solid #eee', borderRadius: '8px', padding: '8px'}} className="col-sm-12">
+                  <CodeEditor />
+                </div>
                 <Footer />
-            </div>
-        )
+            <div>
+        );
     }
 }
 
