@@ -20,10 +20,10 @@ class HomePage extends React.Component {
 
             <div>
                 <Navbar />
-                <Row>
+                <div className="container-fluid">
+				<Row>
                     <Col>This is is the Home Page and This coding style should be followed</Col>
                 </Row>
-                <div className="container-fluid">
                     <div className="row">
                         <div className="col-sm-6">
                             <Charts chartType="Line" labels={this.state.labels} title="Sample 1" data={this.state.data} options={{}} />
