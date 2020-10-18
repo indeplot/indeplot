@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
-import Footer from "../../Components/Footer";
-import Navbar from "../../Components/Navbarr";
+import Footer from '../../Components/Footer';
+import Navbar from '../../Components/Navbarr';
 
-import CODE_OF_CONDUCT from "../../Assets/CODE_OF_CONDUCT.md";
-import ReactMarkdown from "react-markdown";
+import CODE_OF_CONDUCT from '../../Assets/CODE_OF_CONDUCT.md';
+import ReactMarkdown from 'react-markdown';
 
-import "./CodeOfConduct.styles.css";
+import './CodeOfConduct.styles.css';
 
 const CodeOfConduct = () => {
-  const [conductText, setConductText] = useState("");
+  const [conductText, setConductText] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,9 +23,9 @@ const CodeOfConduct = () => {
   return (
     <div>
       <Navbar />
-      <div className="container">
-        <div className="row coc">
-          <div className="col-sm-6">
+      <div className='container'>
+        <div className='row coc'>
+          <div className='col-sm-6'>
             <ReactMarkdown source={conductText} />
           </div>
         </div>
