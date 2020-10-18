@@ -26,11 +26,11 @@ class HomePage extends React.Component {
                     </Row>
                 </Container>
                 <ChartSelector data={data} labels={labels} />
-                <div style={{marginBottom: '16px', border: '1px solid #eee', borderRadius: '8px', padding: '8px'}} className="col-sm-12">
-                  <CodeEditor />
+                <div style={{ marginBottom: '16px', border: '1px solid #eee', borderRadius: '8px', padding: '8px' }} className="col-sm-12">
+                    <CodeEditor />
                 </div>
                 <Footer />
-            <div>
+            </div>
         );
     }
 }
