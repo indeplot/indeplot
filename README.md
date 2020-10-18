@@ -7,7 +7,7 @@
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -110,6 +110,10 @@ Thanks goes to these wonderful people who make this big
     <td align="center"><a href="https://github.com/varunpappu"><img src="https://avatars1.githubusercontent.com/u/10454067?v=4" width="100px;" alt=""/><br /><sub><b>Varun Subramanian</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=varunpappu" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/abdulsamad"><img src="https://avatars0.githubusercontent.com/u/38286890?v=4" width="100px;" alt=""/><br /><sub><b>AbdulSamad Ansari</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=abdulsamad" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/MissyM2"><img src="https://avatars0.githubusercontent.com/u/34319929?v=4" width="100px;" alt=""/><br /><sub><b>MissyM2</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=MissyM2" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ankit-rawani"><img src="https://avatars3.githubusercontent.com/u/58520092?v=4" width="100px;" alt=""/><br /><sub><b>Ankit Rawani</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=ankit-rawani" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://suprdev.netlify.app"><img src="https://avatars0.githubusercontent.com/u/38065786?v=4" width="100px;" alt=""/><br /><sub><b>Sunny Praksah</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=sprakash57" title="Code">💻</a></td>
   </tr>
 </table>
 
