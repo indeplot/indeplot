@@ -12,7 +12,7 @@ class HomePage extends React.Component {
         super()
         this.state = {
             data: [65, 59, 80, 81, 56],
-            labels: ['SampleX1', 'SampleX2', 'SampleX3', 'SampleX4']
+            labels: ['SampleX1', 'SampleX2', 'SampleX3', 'SampleX4', 'SampleX5']
         }
     }
 
