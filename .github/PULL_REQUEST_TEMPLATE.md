@@ -19,7 +19,8 @@ Please delete options that are not relevant.
 # Checklist:
 
 - [ ] This PR is made on develop branch
-- [ ] My code follows the style guidelines of this project
+- [ ] I have not changed anything in the files .all-contributorsrc and The Contributor section in Readme.md
+- [ ] My code follows the proper indentation style of the project
 - [ ] I have performed a self-review of my own code
 - [ ] I have commented my code, particularly in hard-to-understand areas
 - [ ] I have made corresponding changes to the documentation
