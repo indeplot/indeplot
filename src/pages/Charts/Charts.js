@@ -13,12 +13,12 @@ export default class Charts extends React.Component {
     chartSelector = () => {
 
         if (this.props.chartType === "Line") {
-            return <LineChart labels={this.props.labels} title={this.props.title} data={this.props.data} options={{}} />
+            return <LineChart labels={this.props.labels} title={this.props.title} data={this.props.data} color={this.props.chartColor} options={{}} />
         }
         if (this.props.chartType === "Bar") {
-            return <BarChart labels={this.props.labels} title={this.props.title} data={this.props.data} options={{}} />
+            return <BarChart labels={this.props.labels} title={this.props.title} data={this.props.data} color={this.props.chartColor} options={{}} />
         }
-        return <LineChart labels={this.props.labels} title={this.props.title} data={this.props.data} options={{}} />
+        return <LineChart labels={this.props.labels} title={this.props.title} data={this.props.data} color={this.props.chartColor} options={{}} />
     }
 
     render() {
