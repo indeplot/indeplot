@@ -19,6 +19,7 @@ Please delete options that are not relevant.
 # Checklist:
 
 - [ ] This PR is made on develop branch
+- [ ] I have mentioned above the issue number which i have solved
 - [ ] I have not changed anything in the files .all-contributorsrc and The Contributor section in Readme.md
 - [ ] My code follows the proper indentation style of the project
 - [ ] I have performed a self-review of my own code
