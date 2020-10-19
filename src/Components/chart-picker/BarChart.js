@@ -12,7 +12,7 @@ export function BarChart(props) {
           label: props.title,
           fill: false,
           lineTension: 0.5,
-          backgroundColor: 'rgba(75,192,192,1)',
+          backgroundColor: props.bgColor,
           borderColor: 'rgba(0,0,0,1)',
           borderWidth: 2,
           data: props.data
@@ -22,7 +22,7 @@ export function BarChart(props) {
   }
 
   return (
-    <Bar data={generateGraph} />)
+    <Bar data={generateGraph} legend={{ display: false }} />)
 }
 
 
@@ -30,5 +30,6 @@ BarChart.propTypes = {
   labels: PropTypes.array,
   title: PropTypes.string,
   data: PropTypes.array,
-  options: PropTypes.any
+  options: PropTypes.any,
+  bgColor: PropTypes.string,
 };
