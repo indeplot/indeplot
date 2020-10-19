@@ -22,7 +22,7 @@ export function BarChart(props) {
   }
 
   return (
-    <Bar data={generateGraph} />)
+    <Bar data={generateGraph} legend={{ display: false }} />)
 }
 
 

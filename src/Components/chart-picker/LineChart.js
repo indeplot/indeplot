@@ -22,7 +22,7 @@ export function LineChart(props) {
   }
 
   return (
-    <Line data={generateGraph} />)
+    <Line data={generateGraph} legend={{ display: false }} />)
 }
 
 
