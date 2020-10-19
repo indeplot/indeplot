@@ -25,8 +25,12 @@ const CodeOfConduct = () => {
       <Navbar />
       <div className='container'>
         <div className='row coc'>
-          <div className='col-sm-6'>
-            <ReactMarkdown source={conductText} />
+          <div className='col'>
+            <div className='card'>
+              <div className='card-body'>
+                <ReactMarkdown source={conductText} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
