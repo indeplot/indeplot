@@ -12,3 +12,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.color-picker {
+    padding: 0.5rem;
+    background: white;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    height: 2rem;
+    width: 5rem;
+}
