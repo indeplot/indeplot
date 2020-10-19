@@ -1,10 +1,13 @@
 import React from 'react';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col, Container} from 'react-bootstrap';
+
 import Footer from '../../Components/Footer';
 import Navbar from '../../Components/Navbarr';
 import ChartSelector from '../../Components/ChartSelector';
 import CodeEditor from '../../Components/CodeEditor';
 import Equation from '../../Components/Equation/Equation';
+
+import Toggler from '../../Components/ThemeChange/Toggler';
 
 class HomePage extends React.Component {
 
@@ -16,6 +19,8 @@ class HomePage extends React.Component {
         }
     }
 
+    
+
     render() {
         const { data, labels } = this.state;
         return (
@@ -23,10 +28,12 @@ class HomePage extends React.Component {
                 <Navbar />
                 <Container fluid className="mb-4">
                     <Row>
-                        <Col>This is is the Home Page and This coding style should be followed</Col>
+                        <Col>Plot your own functions with ease</Col>
+                        <Col xs md lg="8"/>
+                        <Col><Toggler toggleTheme={this.props.themeToggler} /></Col>
                     </Row>
                 </Container>
-                <ChartSelector data={data} labels={labels} />
+                <ChartSelector data={data} labels={labels} theme={this.props.theme} />
                 <div style={{ marginBottom: '16px', border: '1px solid #eee', borderRadius: '8px', padding: '8px' }} className="col-sm-12">
                     <CodeEditor />
                 </div>

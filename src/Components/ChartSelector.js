@@ -29,7 +29,7 @@ class CharSelector extends Component {
                 </Form>
                 <Row>
                     <Col>
-                        <Charts chartType={selected} labels={labels} title="Sample" data={data} options={{}} />
+                        <Charts chartType={selected} theme={this.props.theme} labels={labels} title="Sample" data={data} options={{}} />
                     </Col>
                 </Row>
             </Container>
