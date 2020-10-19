@@ -7,7 +7,7 @@
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -115,6 +115,7 @@ Thanks goes to these wonderful people who make this big
   <tr>
     <td align="center"><a href="https://suprdev.netlify.app"><img src="https://avatars0.githubusercontent.com/u/38065786?v=4" width="100px;" alt=""/><br /><sub><b>Sunny Praksah</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=sprakash57" title="Code">💻</a></td>
     <td align="center"><a href="http://theamritanair.github.io"><img src="https://avatars3.githubusercontent.com/u/38832512?v=4" width="100px;" alt=""/><br /><sub><b>Amrita Nair</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=theamritanair" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/rdhaundiyal-indeed"><img src="https://avatars2.githubusercontent.com/u/40640586?v=4" width="100px;" alt=""/><br /><sub><b>rdhaundiyal-indeed</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=rdhaundiyal-indeed" title="Code">💻</a></td>
   </tr>
 </table>
 
