@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { Polar } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 
-export function PolarChart(props) {
+export function DoughnutChart(props) {
 
   function generateGraph() {
     return {
@@ -22,11 +22,11 @@ export function PolarChart(props) {
   }
 
   return (
-    <Polar data={generateGraph} />)
+    <Doughnut data={generateGraph} />)
 }
 
 
-PolarChart.propTypes = {
+DoughnutChart.propTypes = {
   labels: PropTypes.array,
   title: PropTypes.string,
   data: PropTypes.array,
