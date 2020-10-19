@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Charts from '../pages/Charts/Charts';
 import { SketchPicker } from 'react-color';
 
-const chartTypes = ['Bar', 'Line'];
+const chartTypes = ['Bar', 'Line', 'Polar', 'Doughnut', 'Pie'];
 
 class CharSelector extends Component {
     state = {
