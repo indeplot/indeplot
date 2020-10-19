@@ -3,7 +3,7 @@ import { Col, Container, Form, Row } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import Charts from '../pages/Charts/Charts';
 
-const chartTypes = ['Bar', 'Line'];
+const chartTypes = ['Bar', 'Line', 'Polar'];
 
 class CharSelector extends Component {
     state = {
