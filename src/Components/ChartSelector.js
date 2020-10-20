@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Charts from '../pages/Charts/Charts';
 import { SketchPicker } from 'react-color';
 
-const chartTypes = ['Bar', 'Line', 'Polar', 'Doughnut', 'Pie'];
+const chartTypes = ['Bar', 'Line', 'Polar', 'Doughnut', 'Pie', 'Scatter'];
 
 class CharSelector extends Component {
     state = {
@@ -14,12 +14,13 @@ class CharSelector extends Component {
             g:'192',
             b:'192',
             a:'1',
-        },
+        }, 
         colorPickerOn:false,
     }
 
     handleSelect = (e) => {
         this.setState({ selected: e.target.value });
+        this.props.updateChart(e.target.value);
     }
 
     handleColors = (picked) => {
@@ -40,7 +41,7 @@ class CharSelector extends Component {
 
     render() {
         const { selected, color, colorPickerOn } = this.state;
-        const { data, labels } = this.props;
+        const { data, scatterData, labels } = this.props;
         return (
             <Container>
                 <Form inline className="justify-content-center mb-3">
@@ -67,7 +68,7 @@ class CharSelector extends Component {
                 </Form>
                 <Row>
                     <Col>
-                        <Charts chartType={selected} chartColor={color} labels={labels} title="Sample" data={data} options={{}} />
+                        <Charts chartType={selected} chartColor={color} labels={labels} title="Sample" data={data} scatterData={scatterData} options={{}} />
                     </Col>
                 </Row>
             </Container>
