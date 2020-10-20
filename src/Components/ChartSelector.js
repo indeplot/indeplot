@@ -66,7 +66,7 @@ class CharSelector extends Component {
                     </Form.Label>
                     <DropdownButton className="chart-type-selector" title={selected} variant="outline-dark" onSelect={this.handleSelect}>
                         {chartTypes.map((item, i) =>
-                            <Dropdown.Item /* as="button"  */key={i} eventKey={item} >{chartTypeIcons[item]}{item}</Dropdown.Item>
+                            <Dropdown.Item key={i} eventKey={item} >{chartTypeIcons[item]}{item}</Dropdown.Item>
                         )}
                     </DropdownButton>
                     <span>&nbsp;</span>
