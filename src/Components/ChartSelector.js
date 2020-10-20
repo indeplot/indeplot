@@ -7,7 +7,7 @@ import { SketchPicker } from 'react-color';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartPie, faChartLine, faChartBar } from '@fortawesome/free-solid-svg-icons';
 
-const chartTypes = ['Bar', 'Line', 'Polar', 'Doughnut', 'Pie','HorizontalBar',];
+const chartTypes = ['Bar', 'Line', 'Polar', 'Doughnut', 'Pie','HorizontalBar','Scatter'];
 
 const pieIcon = <FontAwesomeIcon icon={faChartPie} />;
 const lineIcon = <FontAwesomeIcon icon={faChartLine} />;
@@ -27,16 +27,17 @@ class CharSelector extends Component {
     state = {
         selected: 'Bar',
         color: {
-            r: '75',
-            g: '192',
-            b: '192',
-            a: '1',
-        },
-        colorPickerOn: false,
+            r:'75',
+            g:'192',
+            b:'192',
+            a:'1',
+        }, 
+        colorPickerOn:false,
     }
 
-    handleSelect = (key, e) => {
-        this.setState({ selected: key });
+    handleSelect = (e) => {
+        this.setState({ selected: e.target.value });
+        this.props.updateChart(e.target.value);
     }
 
     handleColors = (picked) => {
@@ -61,7 +62,7 @@ class CharSelector extends Component {
 
     render() {
         const { selected, color, colorPickerOn } = this.state;
-        const { data, labels } = this.props;
+        const { data, scatterData, labels } = this.props;
         return (
             <Container>
                 <Form inline className="justify-content-center mb-3">
@@ -91,7 +92,7 @@ class CharSelector extends Component {
                 </Form>
                 <Row>
                     <Col>
-                        <Charts chartType={selected} chartColor={color} labels={labels} title="Sample" data={data} options={{}} />
+                        <Charts chartType={selected} chartColor={color} labels={labels} title="Sample" data={data} scatterData={scatterData} options={{}} />
                     </Col>
                 </Row>
             </Container>

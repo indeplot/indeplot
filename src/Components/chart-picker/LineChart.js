@@ -6,6 +6,8 @@ export function LineChart(props) {
 
   function generateGraph() {
     const colorVal = `rgba(${props.color.r},${props.color.g},${props.color.b},${props.color.a})`;
+
+       console.log('props.data', props.data);
     return {
       labels: props.labels,
       datasets: [
