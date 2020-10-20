@@ -69,7 +69,7 @@ class HomePage extends React.Component {
                 >
                     <CodeEditor />
                 </div>
-                <div className={this.state.chart === 'Scatter' ? 'visible' : 'invisible'}>
+                <div className={this.state.chart === 'Scatter' ? 'd-block' : 'd-none'}>
                     <CoordinateInput updateCoordinates = {this.updateCoordinates} />
                 </div>
 
