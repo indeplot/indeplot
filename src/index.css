@@ -13,6 +13,21 @@ code {
     monospace;
 }
 
+.chart-type-selector .dropdown-item {
+	padding: .5rem 1.5rem;
+	border-bottom: 1px solid #ccc;
+}
+.chart-type-selector .dropdown-item:last-child {
+	border-bottom: none;
+}
+.chart-type-selector .dropdown-item:hover {
+	background: #343a40;
+	color: white;
+}
+.chart-type-selector .dropdown-item svg {
+	margin-right: 12px;
+}
+
 .color-picker {
     padding: 0.5rem;
     background: white;

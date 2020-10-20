@@ -1,10 +1,27 @@
 import React, { Component } from 'react';
-import { Col, Container, Form, Row, Button, Modal } from 'react-bootstrap';
+import { Col, Container, Form, Row, Button, Modal, Dropdown, DropdownButton } from 'react-bootstrap';
 import PropTypes from 'prop-types';
 import Charts from '../pages/Charts/Charts';
 import { SketchPicker } from 'react-color';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChartPie, faChartLine, faChartBar } from '@fortawesome/free-solid-svg-icons';
+
 const chartTypes = ['Bar', 'Line', 'Polar', 'Doughnut', 'Pie'];
+
+const pieIcon = <FontAwesomeIcon icon={faChartPie} />;
+const lineIcon = <FontAwesomeIcon icon={faChartLine} />;
+const barIcon = <FontAwesomeIcon icon={faChartBar} />;
+const polarIcon = pieIcon; // no polar chart icon in free-solid-svg-icons
+const doughnutIcon = pieIcon; // no doughnut chart icon in free-solid-svg-icons
+
+const chartTypeIcons = {
+    Bar: barIcon,
+    Line: lineIcon,
+    Polar: polarIcon,
+    Doughnut: doughnutIcon,
+    Pie: pieIcon
+};
 
 class CharSelector extends Component {
     state = {
@@ -18,8 +35,8 @@ class CharSelector extends Component {
         colorPickerOn:false,
     }
 
-    handleSelect = (e) => {
-        this.setState({ selected: e.target.value });
+    handleSelect = (key, e) => {
+        this.setState({ selected: key });
     }
 
     handleColors = (picked) => {
@@ -47,9 +64,11 @@ class CharSelector extends Component {
                     <Form.Label className="mr-2">
                         Select Chart Type
                     </Form.Label>
-                    <Form.Control as="select" onChange={this.handleSelect} value={selected} custom size="sm">
-                        {chartTypes.map((item, i) => <option key={i} value={item}>{item}</option>)}
-                    </Form.Control>
+                    <DropdownButton className="chart-type-selector" title={selected} variant="outline-dark" onSelect={this.handleSelect}>
+                        {chartTypes.map((item, i) =>
+                            <Dropdown.Item /* as="button"  */key={i} eventKey={item} >{chartTypeIcons[item]}{item}</Dropdown.Item>
+                        )}
+                    </DropdownButton>
                     <span>&nbsp;</span>
                     <Button as="input" type="button" value="Color Picker" variant="outline-dark" onClick={this.handleColorPicker} />
                     <Modal show={colorPickerOn} onHide={this.handleModalClose}>
