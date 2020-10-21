@@ -14,8 +14,8 @@ function Equation(){
                     <h1> Equation</h1>
                     <button style={{margin: '10px', padding: '8px' }} className="btn btn-primary">Plot</button>
                 </div>
-                <textarea className="form-control form-control-lg
-                "type="text" value={content}
+                <textarea className="form-control form-control-lg"
+                type="text" value={content}
                 onChange={(e) => setContent(e.target.value)}
                 placeholder="Enter a mathematical expression in Latex format"></textarea>
             </div>
