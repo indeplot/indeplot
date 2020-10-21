@@ -27,12 +27,12 @@ class CharSelector extends Component {
     state = {
         selected: 'Bar',
         color: {
-            r:'75',
-            g:'192',
-            b:'192',
-            a:'1',
+            r: '75',
+            g: '192',
+            b: '192',
+            a: '1',
         },
-        colorPickerOn:false,
+        colorPickerOn: false,
     }
 
     handleSelect = (key, e) => {
@@ -44,15 +44,19 @@ class CharSelector extends Component {
     }
 
     handleColor = (e) => {
-        this.setState({ color: e.rgb, colorPickerOn:false});
+        this.setState({ color: e.rgb, colorPickerOn: false });
     }
 
     handleColorPicker = (e) => {
-        this.setState({colorPickerOn: !this.state.colorPickerOn});
+        this.setState({ colorPickerOn: !this.state.colorPickerOn });
     }
 
     handleModalClose = (e) => {
-        this.setState({colorPickerOn: false});
+        this.setState({ colorPickerOn: false });
+    }
+
+    refreshData = () => {
+        this.props.onRefreshData();
     }
 
     render() {
@@ -71,6 +75,7 @@ class CharSelector extends Component {
                     </DropdownButton>
                     <span>&nbsp;</span>
                     <Button as="input" type="button" value="Color Picker" variant="outline-dark" onClick={this.handleColorPicker} />
+                    <Button type="button" variant="outline-dark" onClick={this.refreshData} className="ml-1">Refresh</Button>
                     <Modal show={colorPickerOn} onHide={this.handleModalClose}>
                         <Modal.Header closeButton>
                             Color Picker
