@@ -1,6 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
 import {HorizontalBar} from 'react-chartjs-2';
 
 export function HorizontalBarChart(props){
