@@ -45,7 +45,7 @@ class HomePage extends React.Component {
                 <Navbar />
                 <Container fluid className="mb-4">
                     <Row>
-                        <Col>This is is the Home Page and This coding style should be followed</Col>
+                        <Col>Welcome to Indeplot</Col>
                     </Row>
                 </Container>
                 <ChartSelector data={data} labels={labels} onRefreshData={this.handleRefreshData} />

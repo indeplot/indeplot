@@ -7,7 +7,7 @@ import { SketchPicker } from 'react-color';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartPie, faChartLine, faChartBar } from '@fortawesome/free-solid-svg-icons';
 
-const chartTypes = ['Bar', 'Line', 'Polar', 'Doughnut', 'Pie'];
+const chartTypes = ['Bar', 'Line', 'Polar', 'Doughnut', 'Pie','HorizontalBar',];
 
 const pieIcon = <FontAwesomeIcon icon={faChartPie} />;
 const lineIcon = <FontAwesomeIcon icon={faChartLine} />;
