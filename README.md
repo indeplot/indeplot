@@ -7,7 +7,7 @@
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -119,7 +119,6 @@ Thanks goes to these wonderful people who make this big
     <td align="center"><a href="http://ieshaan12.github.io"><img src="https://avatars2.githubusercontent.com/u/31623825?v=4" width="100px;" alt=""/><br /><sub><b>Ieshaan Saxena</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=ieshaan12" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Ojay-dev"><img src="https://avatars3.githubusercontent.com/u/52764057?v=4" width="100px;" alt=""/><br /><sub><b>Ojonugwa Justice Alikali</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=Ojay-dev" title="Code">💻</a></td>
     <td align="center"><a href="http://www.nutandem.com"><img src="https://avatars2.githubusercontent.com/u/56796209?v=4" width="100px;" alt=""/><br /><sub><b>Ben Brooks</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=bensbits91" title="Code">💻</a></td>
-    <td align="center"><a href="https://github.com/Thilagavathi1"><img src="https://avatars3.githubusercontent.com/u/16552447?v=4" width="100px;" alt=""/><br /><sub><b>Thilagavathi</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=Thilagavathi1" title="Code">💻</a></td>
   </tr>
 </table>
 

@@ -12,6 +12,7 @@
     "bootstrap": "^4.5.3",
     "chart.js": "^2.9.3",
     "codemirror": "^5.58.1",
+    "lodash": "^4.17.20",
     "react": "^16.13.1",
     "react-bootstrap": "^1.3.0",
     "react-chartjs-2": "^2.10.0",
@@ -20,7 +21,7 @@
     "react-dom": "^16.13.1",
     "react-mathjax2": "0.0.2",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "^3.4.4",
     "react-toastify": "^6.0.0-rc.3",
     "styled-components": "^5.2.0"
   },
