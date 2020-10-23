@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Line } from "react-chartjs-2";
 
 export function LineChart(props) {
-
   function generateGraph() {
     const colorVal = `rgba(${props.color.r},${props.color.g},${props.color.b},${props.color.a})`;
     return {

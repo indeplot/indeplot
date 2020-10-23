@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Bar } from "react-chartjs-2";
 
 export function BarChart(props) {
-
   function generateGraph() {
     const colorVal = `rgba(${props.color.r},${props.color.g},${props.color.b},${props.color.a})`;
     return {

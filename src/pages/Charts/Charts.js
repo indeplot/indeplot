@@ -48,6 +48,7 @@ export default class Charts extends React.Component {
 
 
 Charts.propTypes = {
+    theme: PropTypes.string,
     chartType: PropTypes.string,
     labels: PropTypes.array,
     title: PropTypes.string,
