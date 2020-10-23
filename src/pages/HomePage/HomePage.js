@@ -14,15 +14,14 @@ class HomePage extends React.Component {
         super()
         this.state = {
             chart: 'bar',
-            data: [65, 59, 80, 81, 56],
-            labels: ['SampleX1', 'SampleX2', 'SampleX3', 'SampleX4', 'SampleX5'],
-            scatterData:[ { x: 0, y: 0 }, { x: 50, y: 50 }, { x: 100, y: 100 }]
+            data: [],
+            labels: []
         }
     }
 
     handleRefreshData = () => {
         // `requiredDataPts` is adjustable, We can create an input box on UI to configure the total number of data points to display.
-        const requiredDataPts = 10;
+        const requiredDataPts = 0;
         // `upperLimit` and `lowerLimit` can be anything between -100 to 100. Got to generateData.js to find more.
         const { data, labels } = generateData(10, 100, { floating: false, count: requiredDataPts });
         this.setState({ data, labels });
@@ -37,7 +36,10 @@ class HomePage extends React.Component {
 
     updateCoordinates = ( xCoord, yCoord )  => {
         this.setState( prevState => ({
-            scatterData: [...prevState.scatterData, {"x":xCoord, "y":yCoord}]
+            data: [...prevState.data, xCoord]
+        }));
+        this.setState( prevState => ({
+            labels: [...prevState.labels, yCoord]
         }));
     }
 
@@ -47,7 +49,7 @@ class HomePage extends React.Component {
 
 
     render() {
-        const { data, scatterData, labels, showSplashScreen } = this.state;
+        const { data, labels, showSplashScreen } = this.state;
   
 
         if (showSplashScreen) {
@@ -62,17 +64,16 @@ class HomePage extends React.Component {
                         <Col>Welcome to Indeplot</Col>
                     </Row>
                 </Container>
-                <ChartSelector data={data} scatterData={scatterData} labels={labels} updateChart={this.updateChart} />
+                <ChartSelector data={data} labels={labels} updateChart={this.updateChart} onRefreshData={this.handleRefreshData} />
                 <div
                     style={{ marginBottom: '16px', border: '1px solid #eee', borderRadius: '8px', padding: '8px' }}
                     className="col-sm-12"
                 >
                     <CodeEditor />
                 </div>
-                <div className={this.state.chart === 'Scatter' ? 'd-block' : 'd-none'}>
+                <div>
                     <CoordinateInput updateCoordinates = {this.updateCoordinates} />
                 </div>
-
                 <div>
                     <Equation />
                 </div>

@@ -35,9 +35,9 @@ class CharSelector extends Component {
         colorPickerOn:false,
     }
 
-    handleSelect = (e) => {
-        this.setState({ selected: e.target.value });
-        this.props.updateChart(e.target.value);
+    handleSelect = (key, e) => {
+        this.setState({ selected: key});
+        this.props.updateChart(key);
     }
 
     handleColors = (picked) => {

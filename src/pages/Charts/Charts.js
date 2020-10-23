@@ -34,7 +34,8 @@ export default class Charts extends React.Component {
         }
         if (this.props.chartType === "HorizontalBar") {
             return <HorizontalBarChart labels={this.props.labels} title={this.props.title} data={this.props.data} color={this.props.chartColor} options={{}} />
-         if (this.props.chartType === "Scatter") {
+        }
+        if (this.props.chartType === "Scatter") {
             return <ScatterChart labels={this.props.labels} title={this.props.title} scatterData={this.props.scatterData} color={this.props.chartColor} options={{}} />
         }
         return <LineChart labels={this.props.labels} title={this.props.title} data={this.props.data} color={this.props.chartColor} options={{}} />
