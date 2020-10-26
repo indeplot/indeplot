@@ -12,6 +12,7 @@ export default function Navbarr() {
 				<ReactBootStrap.Nav className="mr-auto">
 					<ReactBootStrap.Nav.Link href="/">Home</ReactBootStrap.Nav.Link>
 					<ReactBootStrap.Nav.Link href="/">News</ReactBootStrap.Nav.Link>
+					<ReactBootStrap.Nav.Link href="/contributors">Contributors</ReactBootStrap.Nav.Link>
 				</ReactBootStrap.Nav>
 				<ReactBootStrap.Nav>
 					<ReactBootStrap.Form inline>

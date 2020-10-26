@@ -1,8 +1,8 @@
 import React from 'react';
-import { Row, Col, Container} from 'react-bootstrap';
+import { Row, Col, Container } from 'react-bootstrap';
 
 import Footer from '../../Components/Footer';
-import Navbar from '../../Components/Navbarr';
+import Navbar from '../../Components/Navbar';
 import ChartSelector from '../../Components/ChartSelector';
 import CodeEditor from '../../Components/CodeEditor';
 import Equation from '../../Components/Equation/Equation';
@@ -49,7 +49,7 @@ class HomePage extends React.Component {
                 <Container fluid className="mb-4">
                     <Row>
                         <Col>Plot your own functions with ease</Col>
-                        <Col xs md lg="8"/>
+                        <Col xs md lg="8" />
                         <Col><Toggler toggleTheme={this.props.themeToggler} /></Col>
                     </Row>
                 </Container>
