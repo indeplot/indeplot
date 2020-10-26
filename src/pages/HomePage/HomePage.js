@@ -15,7 +15,8 @@ class HomePage extends React.Component {
         this.state = {
             chart: 'bar',
             data: [],
-            labels: []
+            labels: [],
+            coords: []
         }
     }
 
@@ -34,13 +35,44 @@ class HomePage extends React.Component {
         }, 2000);
     }
 
-    updateCoordinates = ( xCoord, yCoord )  => {
+    addCoordinate = coord => {
         this.setState( prevState => ({
-            data: [...prevState.data, xCoord]
+            coords: [...prevState.coords, coord]
         }));
         this.setState( prevState => ({
-            labels: [...prevState.labels, yCoord]
+            data: [...prevState.data, coord.data]
         }));
+        this.setState( prevState => ({
+            labels: [...prevState.labels, coord.labels]
+        }));
+    }
+
+    deleteCoordinate = coord => {
+        var dataAry = this.state.data
+        var labelsAry = this.state.labels
+        var coordsAry = this.state.coords
+        
+        var reducedData = dataAry.reduce(function(acc, val, ind, arr) {
+            if(val === coord.data){
+                acc.push(ind);
+            }
+            return acc;
+        },[]);
+
+        var reducedLabels = labelsAry.reduce(function(acc, val, ind, arr) {
+            if(val === coord.labels){
+                acc.push(ind);
+            }
+            return acc;
+        },[]);
+
+        let intersection = reducedData.filter(x => reducedLabels.includes(x));
+        if (intersection > 0) {
+            dataAry.splice(intersection, 1)
+            labelsAry.splice(intersection, 1)
+            coordsAry.splice(intersection, 1)
+            this.setState({coords:coordsAry})
+        }
     }
 
     updateChart = ( chart ) => {
@@ -72,7 +104,12 @@ class HomePage extends React.Component {
                     <CodeEditor />
                 </div>
                 <div>
-                    <CoordinateInput updateCoordinates = {this.updateCoordinates} />
+                    <CoordinateInput 
+                        updateCoordinates = {this.updateCoordinates}
+                        addCoordinate = {this.addCoordinate}
+                        deleteCoordinate = {this.deleteCoordinate} 
+                        coords = {this.state.coords}
+                    />
                 </div>
                 <div>
                     <Equation />
