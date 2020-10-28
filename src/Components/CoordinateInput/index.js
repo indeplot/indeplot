@@ -32,10 +32,12 @@ export default function CoordinateInput( props ) {
 
     const delCoord = (evt) => {
         evt.preventDefault()
-        alert(`Submitting coord for deletion ${coordsOption},`)
+       /*  alert(`Submitting coord for deletion ${coordsOption},`) */
         var splitCoord = coordsOption.split(', ');
        /*  setLabelCoord(splitCoord[0])
         setYCoord(splitCoord[1]) */
+      /*   alert(`splitCoord[0] ${splitCoord[0]}`)
+        alert(`splitCoord[1] ${splitCoord[1]}`) */
         props.deleteCoordinate(splitCoord[0], splitCoord[1])
         resetCoordsOption();
     }
@@ -53,6 +55,7 @@ export default function CoordinateInput( props ) {
     const coordsOptions = props.coords.map((coord) => {
         return <option value={coord.label.value}>{coord.label}, {coord.data}</option>
     })
+    /* console.log('gimme props.coors', props.coords) */
 
 
     return (
@@ -69,7 +72,7 @@ export default function CoordinateInput( props ) {
                                 style={{width:"42%", marginLeft:"5px", paddingLeft:"8px", border:"1px solid lightgray", borderRadius: "4px"}}
                                 custom
                                 size="med"
-                                placeholder="Chart Title"
+                                placeholder="Chart title"
                                 {...bindChartTitle}
                             >
                             </Form.Control>
@@ -126,7 +129,7 @@ export default function CoordinateInput( props ) {
                             style={{width:"42%", textAlign:"center"}}
                             {...bindLabelOption}
                         >
-                            <option disabled={true} value="">X Coord</option>
+                            <option disabled={true} value="">X value</option>
                             {labelOptions}
                         </Form.Control>
                         <Form.Control

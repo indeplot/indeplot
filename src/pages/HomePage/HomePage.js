@@ -3,11 +3,11 @@ import { Line } from 'react-chartjs-2';
 import { Row, Col, Container } from 'react-bootstrap';
 import Footer from '../../Components/Footer';
 import Navbar from '../../Components/Navbarr';
-/* import ChartSelector from '../../Components/ChartSelector'; */
+import ChartSelector from '../../Components/ChartSelector';
 import CodeEditor from '../../Components/CodeEditor';
 import CoordinateInput from '../../Components/CoordinateInput';
 import Equation from '../../Components/Equation/Equation';
-/* import SplashScreen from '../../Components/SplashScreen'; */
+import SplashScreen from '../../Components/SplashScreen';
 
 
 class HomePage extends React.Component {
@@ -59,14 +59,30 @@ class HomePage extends React.Component {
         }
     }
 
+    /* handleRefreshData = () => {
+        // `requiredDataPts` is adjustable, We can create an input box on UI to configure the total number of data points to display.
+        const requiredDataPts = 0;
+        // `upperLimit` and `lowerLimit` can be anything between -100 to 100. Got to generateData.js to find more.
+        const { data, labels } = generateData(10, 100, { floating: false, count: requiredDataPts });
+        this.setState({ data, labels });
+    } */
+
+    componentDidMount() {
+       /*  this.handleRefreshData(); */
+        setTimeout(() => {
+            this.setState({ showSplashScreen: false })
+        }, 2000);
+    }
+
+    updateChart = ( chart ) => {
+        this.setState({chart: chart});
+    }
+
     addTitleTracking = (chartTitle, tracking) => {
-
         let lineChart = this.reference.chartInstance
-
         lineChart.options.title.text = chartTitle
         lineChart.config.data.datasets[0].label = tracking
         lineChart.update(); 
-
     }
 
     
@@ -101,24 +117,30 @@ class HomePage extends React.Component {
     }
 
      deleteCoordinate = (labelValue, dataValue) => {
+        let lineChart = this.reference.chartInstance
         let chart = this.state.chartData;
-        var labelTmp = parseInt(labelValue);
-        var dataTmp = parseInt(dataValue);
-        var dtaTmp = chart.datasets[0].coords
-        const coordIndex = dtaTmp.findIndex(coord => coord.label === labelTmp && coord.data === dataTmp);
+        var dtaTmp = lineChart.config.data.datasets[0].coords
+        const coordIndex = dtaTmp.findIndex(coord => coord.label === labelValue && coord.data === dataValue);
         if (coordIndex > -1) { 
-            chart.chartData.datasets[0].data.splice(coordIndex, 1)
-            chart.chartData.labels.splice(coordIndex, 1)
-            chart.chartData.datasets[0].coords.splice(coordIndex, 1)
-            console.log('after splice', chart.chartData.datasets[0].data)
-            dtaTmp = chart.chartData.datasets[0].data
-            console.log('dtaTmp', dtaTmp)
+
+            lineChart.config.data.datasets[0].data.splice(coordIndex, 1)
+            chart.labels.splice(coordIndex, 1)
+            lineChart.config.data.datasets[0].coords.splice(coordIndex, 1)
+           
         }
+        lineChart.update(); 
     
     }
 
     
     render() {
+        const { data, labels, showSplashScreen } = this.state;
+  
+
+        if (showSplashScreen) {
+            return <SplashScreen />;
+        }
+
 
         return (
         <div className="App">
@@ -129,6 +151,8 @@ class HomePage extends React.Component {
                     </Row>
                 </Container>
             <div >
+                {/* <ChartSelector data={data} labels={labels} updateChart={this.updateChart} onRefreshData={this.handleRefreshData} /> */}
+
                 <Line ref = {(reference) => this.reference = reference} data={this.state.chartData} options={this.state.options}
                  redraw/>
             </div>
@@ -156,8 +180,6 @@ class HomePage extends React.Component {
                 <Equation />
             </div>
             <Footer />
-            
-            {/* <ChartSelector data={data} labels={labels} updateChart={this.updateChart} onRefreshData={this.handleRefreshData} /> */}
             
             
         </div>
