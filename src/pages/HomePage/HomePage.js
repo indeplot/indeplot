@@ -1,123 +1,172 @@
 import React from 'react';
+import { Line } from 'react-chartjs-2';
 import { Row, Col, Container } from 'react-bootstrap';
 import Footer from '../../Components/Footer';
 import Navbar from '../../Components/Navbarr';
-import ChartSelector from '../../Components/ChartSelector';
+/* import ChartSelector from '../../Components/ChartSelector'; */
 import CodeEditor from '../../Components/CodeEditor';
 import CoordinateInput from '../../Components/CoordinateInput';
 import Equation from '../../Components/Equation/Equation';
-import SplashScreen from '../../Components/SplashScreen';
-import generateData from '../../api/generateData';
+/* import SplashScreen from '../../Components/SplashScreen'; */
+
 
 class HomePage extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            chart: 'bar',
-            data: [],
-            labels: [],
-            coords: []
+            chartData: {
+                labels: [],
+                datasets: [
+                    {
+                        label: "",
+                        data: [],
+                        coords:[],
+                        labelOptions: [],
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 0.6)'
+                        ],
+                      borderWidth: 4
+                     }
+                ],
+            },
+            options: {
+                    responsive: true,
+                    title: {text: "", display: true},
+                    scales: {
+                        yAxes: [
+                            {
+                                ticks: {
+                                    autoSkip: true,
+                                    maxTicksLimit: 10,
+                                    beginAtZero: true
+                                },
+                                gridLines: {
+                                    display:false
+                                }
+                            }
+                        ],
+                        xAxes: [
+                            {
+                                gridLines: {
+                                    display:false
+                                }
+                            }
+                        ]
+                    }
+
+                    }
+            
         }
     }
 
-    handleRefreshData = () => {
-        // `requiredDataPts` is adjustable, We can create an input box on UI to configure the total number of data points to display.
-        const requiredDataPts = 0;
-        // `upperLimit` and `lowerLimit` can be anything between -100 to 100. Got to generateData.js to find more.
-        const { data, labels } = generateData(10, 100, { floating: false, count: requiredDataPts });
-        this.setState({ data, labels });
+    addTitleTracking = (chartTitle, tracking) => {
+
+        let lineChart = this.reference.chartInstance
+
+        lineChart.options.title.text = chartTitle
+        lineChart.config.data.datasets[0].label = tracking
+        lineChart.update(); 
+
     }
 
-    componentDidMount() {
-        this.handleRefreshData();
-        setTimeout(() => {
-            this.setState({ showSplashScreen: false })
-        }, 2000);
+    
+    addLabelValue = (optionVal) => {
+        let chart = this.state.chartData;
+
+        chart.datasets.forEach((dataset) => {
+            dataset.labelOptions.push(optionVal);
+        });
+
     }
 
-    addCoordinate = coord => {
-        this.setState( prevState => ({
-            coords: [...prevState.coords, coord]
-        }));
-        this.setState( prevState => ({
-            data: [...prevState.data, coord.data]
-        }));
-        this.setState( prevState => ({
-            labels: [...prevState.labels, coord.labels]
-        }));
-    }
 
-    deleteCoordinate = coord => {
-        var dataAry = this.state.data
-        var labelsAry = this.state.labels
-        var coordsAry = this.state.coords
-        
-        var reducedData = dataAry.reduce(function(acc, val, ind, arr) {
-            if(val === coord.data){
-                acc.push(ind);
-            }
-            return acc;
-        },[]);
+    addCoordinate = (labelValue, dataValue) => {
+        let chart = this.state.chartData;
 
-        var reducedLabels = labelsAry.reduce(function(acc, val, ind, arr) {
-            if(val === coord.labels){
-                acc.push(ind);
-            }
-            return acc;
-        },[]);
-
-        let intersection = reducedData.filter(x => reducedLabels.includes(x));
-        if (intersection > 0) {
-            dataAry.splice(intersection, 1)
-            labelsAry.splice(intersection, 1)
-            coordsAry.splice(intersection, 1)
-            this.setState({coords:coordsAry})
+        chart.labels.push(labelValue);
+        chart.datasets.forEach((dataset) => {
+            dataset.data.push(dataValue);
+        });
+        let coord = {
+            label:labelValue,
+            data:dataValue 
         }
+        /* update coords to include new pair of coordinates */
+       chart.datasets.forEach((dataset) => {
+            dataset.coords.push(coord);
+        });
+
+        let lineChart = this.reference.chartInstance
+        lineChart.update(); 
     }
 
-    updateChart = ( chart ) => {
-        this.setState({chart: chart});
+     deleteCoordinate = (labelValue, dataValue) => {
+        let chart = this.state.chartData;
+        var labelTmp = parseInt(labelValue);
+        var dataTmp = parseInt(dataValue);
+        var dtaTmp = chart.datasets[0].coords
+        const coordIndex = dtaTmp.findIndex(coord => coord.label === labelTmp && coord.data === dataTmp);
+        if (coordIndex > -1) { 
+            chart.chartData.datasets[0].data.splice(coordIndex, 1)
+            chart.chartData.labels.splice(coordIndex, 1)
+            chart.chartData.datasets[0].coords.splice(coordIndex, 1)
+            console.log('after splice', chart.chartData.datasets[0].data)
+            dtaTmp = chart.chartData.datasets[0].data
+            console.log('dtaTmp', dtaTmp)
+        }
+    
     }
 
-
+    
     render() {
-        const { data, labels, showSplashScreen } = this.state;
-  
-
-        if (showSplashScreen) {
-            return <SplashScreen />;
-        }
 
         return (
-            <div>
-                <Navbar />
+        <div className="App">
+             <Navbar />
                 <Container fluid className="mb-4">
                     <Row>
                         <Col>Welcome to Indeplot</Col>
                     </Row>
                 </Container>
-                <ChartSelector data={data} labels={labels} updateChart={this.updateChart} onRefreshData={this.handleRefreshData} />
-                <div
-                    style={{ marginBottom: '16px', border: '1px solid #eee', borderRadius: '8px', padding: '8px' }}
-                    className="col-sm-12"
-                >
-                    <CodeEditor />
-                </div>
-                <div>
-                    <CoordinateInput 
-                        updateCoordinates = {this.updateCoordinates}
-                        addCoordinate = {this.addCoordinate}
-                        deleteCoordinate = {this.deleteCoordinate} 
-                        coords = {this.state.coords}
-                    />
-                </div>
-                <div>
-                    <Equation />
-                </div>
-                <Footer />
+            <div >
+                <Line ref = {(reference) => this.reference = reference} data={this.state.chartData} options={this.state.options}
+                 redraw/>
             </div>
-        );
+            <div
+                style={{ marginBottom: '16px', border: '1px solid #eee', borderRadius: '8px', padding: '8px' }}
+                className="col-sm-12"
+            >
+                <CodeEditor />
+            </div>
+            <div>
+                <CoordinateInput 
+                    addTitleTracking = {this.addTitleTracking}
+                    addCoordinate = {this.addCoordinate}
+                    deleteCoordinate = {this.deleteCoordinate}
+                    addLabelValue = {this.addLabelValue}
+                    label = {this.state.chartData.datasets[0].label}
+                    title = {this.state.options.title.text}
+                    data = {this.state.chartData.datasets[0].data}
+                    labels={this.state.chartData.labels}
+                    coords={this.state.chartData.datasets[0].coords}
+                    labelOptions = {this.state.chartData.datasets[0].labelOptions}
+                />
+            </div>
+            <div>
+                <Equation />
+            </div>
+            <Footer />
+            
+            {/* <ChartSelector data={data} labels={labels} updateChart={this.updateChart} onRefreshData={this.handleRefreshData} /> */}
+            
+            
+        </div>
+    );
+
     }
+
+    
+    
 }
 
 export default HomePage;

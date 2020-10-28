@@ -3,11 +3,18 @@ import PropTypes from 'prop-types';
 import { Line } from "react-chartjs-2";
 
 export function LineChart(props) {
+  console.log('props in LineChart', props);
+
+ /*  chart = React.createRef(); */
+
+  /* useEffect(() => {
+    console.log('inside LineChart useEffect');
+    props.update();
+  }) */
 
   function generateGraph() {
     const colorVal = `rgba(${props.color.r},${props.color.g},${props.color.b},${props.color.a})`;
 
-       console.log('props.data', props.data);
     return {
       labels: props.labels,
       datasets: [

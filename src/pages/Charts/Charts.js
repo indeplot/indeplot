@@ -6,7 +6,6 @@ import { PolarChart } from '../../Components/chart-picker/PolarChart';
 import { DoughnutChart } from '../../Components/chart-picker/DoughnutChart';
 import { PieChart } from '../../Components/chart-picker/PieChart';
 import { HorizontalBarChart } from '../../Components/chart-picker/HorizontalBarChart';
-import { ScatterChart } from '../../Components/chart-picker/ScatterChart';
 
 export default class Charts extends React.Component {
     constructor(props) {
@@ -14,6 +13,8 @@ export default class Charts extends React.Component {
         this.chartReference = React.createRef();
         this.chartSelector = this.chartSelector.bind(this)
     }
+
+ 
 
     chartSelector = () => {
 
@@ -35,13 +36,11 @@ export default class Charts extends React.Component {
         if (this.props.chartType === "HorizontalBar") {
             return <HorizontalBarChart labels={this.props.labels} title={this.props.title} data={this.props.data} color={this.props.chartColor} options={{}} />
         }
-        if (this.props.chartType === "Scatter") {
-            return <ScatterChart labels={this.props.labels} title={this.props.title} scatterData={this.props.scatterData} color={this.props.chartColor} options={{}} />
-        }
         return <LineChart labels={this.props.labels} title={this.props.title} data={this.props.data} color={this.props.chartColor} options={{}} />
     }
 
     render() {
+           console.log('this.chartReference', this.chartReference)
         return (
             <div>
                 {this.chartSelector()}
