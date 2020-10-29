@@ -7,7 +7,7 @@
 
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <p align="center">
@@ -123,6 +123,7 @@ Thanks goes to these wonderful people who make this big
   </tr>
   <tr>
     <td align="center"><a href="https://github.com/lakshyaTaragi"><img src="https://avatars0.githubusercontent.com/u/72077704?v=4" width="100px;" alt=""/><br /><sub><b>Lakshya Taragi</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=lakshyaTaragi" title="Code">💻</a></td>
+    <td align="center"><a href="https://anubhavvs.github.io/portfolio/"><img src="https://avatars3.githubusercontent.com/u/45201547?v=4" width="100px;" alt=""/><br /><sub><b>Anubhav Saha</b></sub></a><br /><a href="https://github.com/indeplot/indeplot/commits?author=anubhavvs" title="Code">💻</a></td>
   </tr>
 </table>
 
