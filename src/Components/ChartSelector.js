@@ -32,6 +32,7 @@ class CharSelector extends Component {
             b:'192',
             a:'1',
         }, 
+        colorValue:'',
         colorPickerOn:false,
     }
 
@@ -46,6 +47,10 @@ class CharSelector extends Component {
 
     handleColor = (e) => {
         this.setState({ color: e.rgb, colorPickerOn: false });
+        let colorVal = `rgba(${this.state.color.r},${this.state.color.g},${this.state.color.b},${this.state.color.a})`;
+        console.log('chartselector, colorVal', colorVal);
+        this.setState({colorValue: colorVal})
+
     }
 
     handleColorPicker = (e) => {
@@ -62,7 +67,6 @@ class CharSelector extends Component {
 
     render() {
         const { selected, color, colorPickerOn } = this.state;
-        const { data, labels } = this.props;
         return (
             <Container>
                 <Form inline className="justify-content-center mb-3">
@@ -92,7 +96,7 @@ class CharSelector extends Component {
                 </Form>
                 <Row>
                     <Col>
-                        <Charts chartType={selected} chartColor={color} labels={labels} title="Sample" data={data} options={{}} />
+                        <Charts chartType={selected} chartColor={color} />
                     </Col>
                 </Row>
             </Container>

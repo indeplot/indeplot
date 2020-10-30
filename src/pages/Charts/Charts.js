@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { LineChart } from '../../Components/chart-picker/LineChart';
+import LineChart from '../../Components/chart-picker/LineChart';
 import { BarChart } from '../../Components/chart-picker/BarChart';
 import { PolarChart } from '../../Components/chart-picker/PolarChart';
 import { DoughnutChart } from '../../Components/chart-picker/DoughnutChart';
@@ -14,15 +14,18 @@ export default class Charts extends React.Component {
         this.chartSelector = this.chartSelector.bind(this)
     }
 
- 
+    componentDidMount() {
+         console.log('Charts: this.chartReference', this.chartReference)
+    }
+
 
     chartSelector = () => {
 
         if (this.props.chartType === "Line") {
-            return <LineChart labels={this.props.labels} title={this.props.title} data={this.props.data} color={this.props.chartColor} options={{}} />
+            return <LineChart color={this.props.chartColor} />
         }
         if (this.props.chartType === "Bar") {
-            return <BarChart labels={this.props.labels} title={this.props.title} data={this.props.data} color={this.props.chartColor} options={{}} />
+            return <BarChart labels={this.props.labels} title={this.props.title} label={this.props.label} data={this.props.data} options={this.props.options} color={this.props.chartColor}  />
         }
         if (this.props.chartType === "Polar") {
             return <PolarChart labels={this.props.labels} title={this.props.title} data={this.props.data} color={this.props.chartColor} options={{}} />
@@ -36,11 +39,13 @@ export default class Charts extends React.Component {
         if (this.props.chartType === "HorizontalBar") {
             return <HorizontalBarChart labels={this.props.labels} title={this.props.title} data={this.props.data} color={this.props.chartColor} options={{}} />
         }
-        return <LineChart labels={this.props.labels} title={this.props.title} data={this.props.data} color={this.props.chartColor} options={{}} />
+        return <LineChart labels={this.props.labels} title={this.props.title} data={this.props.data} color={this.props.chartColor} options={this.props.options} />
     }
 
     render() {
+       
            console.log('this.chartReference', this.chartReference)
+           console.log('inside charts, this.props', this.props)
         return (
             <div>
                 {this.chartSelector()}
