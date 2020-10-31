@@ -5,6 +5,9 @@ import facebook from '../Assets/Images/facebook.svg';
 import twitter from '../Assets/Images/twitter.svg';
 import instagram from '../Assets/Images/instagram.svg';
 import youtube from '../Assets/Images/youtube.svg';
+import {
+    Link
+} from "react-router-dom";
 export default function Footer() {
     return (
         <FooterContainer className="main-footer">
@@ -20,7 +23,7 @@ export default function Footer() {
                                 <li><a href="/">Story</a></li>
                                 <li><a href="/">Clients</a></li>
                                 <li><a href="/">Testimonials</a></li>
-                                <li><a href="/contributors">Contributors</a></li>
+                                <li><Link to="/contributors">Contributors</Link></li>
                             </ul>
                         </div>
                         {/* Column 2 */}

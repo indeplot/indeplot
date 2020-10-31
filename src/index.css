@@ -36,3 +36,12 @@ code {
     height: 2rem;
     width: 5rem;
 }
+
+.navbar a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar a:hover {
+  color: white;
+  text-decoration: none;
+}

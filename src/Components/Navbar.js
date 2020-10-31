@@ -1,7 +1,10 @@
 import React from 'react';
 import logo from '../Assets/Images/logo.svg';
 import * as ReactBootStrap from 'react-bootstrap';
-export default function Navbarr() {
+import {
+	Link
+} from "react-router-dom";
+export default function Navbar() {
 	return (
 		<ReactBootStrap.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
 			<ReactBootStrap.Navbar.Brand href="/">
@@ -10,9 +13,15 @@ export default function Navbarr() {
 			<ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
 			<ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
 				<ReactBootStrap.Nav className="mr-auto">
-					<ReactBootStrap.Nav.Link href="/">Home</ReactBootStrap.Nav.Link>
-					<ReactBootStrap.Nav.Link href="/">News</ReactBootStrap.Nav.Link>
-					<ReactBootStrap.Nav.Link href="/contributors">Contributors</ReactBootStrap.Nav.Link>
+					<ReactBootStrap.Nav.Link>
+						<Link to="/">Home</Link>
+					</ReactBootStrap.Nav.Link>
+					<ReactBootStrap.Nav.Link>
+						<Link to="/">News</Link>
+					</ReactBootStrap.Nav.Link>
+					<ReactBootStrap.Nav.Link>
+						<Link to="/contributors">Contributors</Link>
+					</ReactBootStrap.Nav.Link>
 				</ReactBootStrap.Nav>
 				<ReactBootStrap.Nav>
 					<ReactBootStrap.Form inline>
