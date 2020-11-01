@@ -14,10 +14,6 @@ export default class Charts extends React.Component {
         this.chartSelector = this.chartSelector.bind(this)
     }
 
-    componentDidMount() {
-         console.log('Charts: this.chartReference', this.chartReference)
-    }
-
 
     chartSelector = () => {
 
@@ -44,8 +40,6 @@ export default class Charts extends React.Component {
 
     render() {
        
-           console.log('this.chartReference', this.chartReference)
-           console.log('inside charts, this.props', this.props)
         return (
             <div>
                 {this.chartSelector()}

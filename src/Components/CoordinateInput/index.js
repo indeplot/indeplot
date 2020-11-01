@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useInput } from '../../hooks/input-hook';
 
 import { Form, Col } from 'react-bootstrap';
@@ -6,19 +6,18 @@ import { Form, Col } from 'react-bootstrap';
 export default function CoordinateInput( props ) {
 
     const [coords, setCoords] = useState([]);
-    const [labelTypes] = useState(['months of the year', 'days of the week', 'increments'])
-    const [months] = useState(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']);
-    const [weekdays] = useState(['Sun','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']);
-    const [increments] = useState(['10','20', '30', '40', '50']);
-    const [labelsSelected, setLabelsSelected] = useState([])
+    const [labelTypes] = useState(['months of the year', 'days of the week', 'increments']);
+    const [selectedLabelType, setSelectedLabelType] = useState('increments');
+    const [labelsSelected, setLabelsSelected] = useState(['10','20', '30', '40', '50']);
+    const [labelsUpdated, setLabelsUpdated] = useState(false);
+    const [labelsSecondUpdate, setLabelsSecondUpdate] = useState(false);
 
     const { value:chartTitle, bind:bindChartTitle, reset:resetChartTitle } = useInput('');
     const { value:tracking, bind:bindTracking, reset:resetTracking } = useInput('');
     const { value:labelValue, bind:bindLabelValue, reset:resetLabelValue } = useInput('');
     const { value:dataValue, bind:bindDataValue, reset:resetDataValue } = useInput('');
-    const { value:labelTypeSelection, bind:bindLabelTypeSelection, reset:resetLabelTypeSelection } = useInput('');
+    const { value:labelTypeSelection, bind:bindLabelTypeSelection } = useInput('');
     const { value:coordsOption, bind:bindCoordsOption, reset:resetCoordsOption } = useInput('');
- 
          
     const handleTitleTrackingSubmit = (evt) => {
         evt.preventDefault();
@@ -29,16 +28,21 @@ export default function CoordinateInput( props ) {
 
    const addCoord = (evt) => {
         evt.preventDefault();
-        props.addCoordinate(labelValue, dataValue)
-        let coord = {
-            label:labelValue,
-            data:dataValue 
-        }
-        let coordString = `${coord.label}, ${coord.data}`
-        setCoords([...coords,coordString]);
+        if ((labelValue === '' || undefined) || (dataValue === '' || undefined) ){
+             alert('you need to choose a label and a y-value before adding');
+        } else {
+            props.addCoordinate(labelValue, dataValue)
+            let coord = {
+                label:labelValue,
+                data:dataValue 
+            }
+            let coordString = `${coord.label}, ${coord.data}`
+            setCoords([...coords,coordString]);
+            resetDataValue();
+            resetLabelValue();
 
-        resetDataValue();
-        resetLabelValue();
+        }
+       
     } 
 
     const delCoord = (evt) => {
@@ -52,38 +56,36 @@ export default function CoordinateInput( props ) {
     }
 
     const addLabelTypeOption = (evt) => {
-        evt.preventDefault();
-        let temp;
-        setLabelsSelected([...labelsSelected, []])
-    
+        evt.preventDefault(); 
+      /*   let temp; */
+        setLabelsSelected([])
+        setLabelsUpdated(true);
+
+       
         switch(labelTypeSelection) {
+            
             case 'months of the year':
-                temp = months.map(label => {
-                    return <option key={label} value={label}>{label}</option>
-                });
-                setLabelsSelected([...labelsSelected, temp]);
+                setSelectedLabelType('months');
+                setLabelsSelected(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])
+                setLabelsSecondUpdate(true);
                 return;
-            case 'days of the week':
-                temp = weekdays.map(label => {
-                    return <option key={label} value={label}>{label}</option>
-                });
-                setLabelsSelected([...labelsSelected, temp]);
+           case 'days of the week':
+                setSelectedLabelType('weekdays');
+                setLabelsSelected(['Sun','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'])
+                setLabelsSecondUpdate(true);
                 return;
             case 'increments':
-                temp = increments.map( label => {
-                    return <option key={label} value={label}>{label}</option>
-                });
-                setLabelsSelected([...labelsSelected, temp]);
-                return;
+                setSelectedLabelType('increments');
+                setLabelsSelected(['10','20', '30', '40', '50'])
+                setLabelsSecondUpdate(true);
+                return; 
             default:
-                temp = increments.map( label => {
-                    return <option key={label} value={label}>{label}</option>
-                });
-                 setLabelsSelected([...labelsSelected, temp]);
+                setSelectedLabelType('increments');
+                setLabelsSelected(['10','20', '30', '40', '50'])
+                setLabelsSecondUpdate(true);
                 return;
-        }    
-        
-    }   
+        }   
+    }
 
     const labelTypesOptions = labelTypes.map( labelType => {
         return <option key={labelType} value={labelType}>{labelType}</option>
@@ -92,6 +94,12 @@ export default function CoordinateInput( props ) {
     const coordsOptions = coords.map((coord, index) => {
         return <option key={index} value={coord}>{coord}</option>
     }) 
+
+    let labelOptions = labelsSelected.map( label => {
+        return <option key={label} value={label}>{label}</option>
+    });
+
+    
 
     return (
         <div className="d-flex flex-column form-group col-sm-12">
@@ -163,8 +171,8 @@ export default function CoordinateInput( props ) {
                             style={{width:"42%", textAlign:"center"}}
                             {...bindLabelValue}
                         >
-                            <option disabled={true} value="">X</option>
-                            {labelsSelected}
+                            <option disabled={true} value="">Labels</option>
+                            {labelOptions}
                         </Form.Control>
                         <Form.Control
                             type="number"
@@ -183,6 +191,7 @@ export default function CoordinateInput( props ) {
                             className="btn btn-primary" 
                             style={{margin: '10px', padding: '8px', width:'75%' }} 
                         />
+                       
                     </Form.Group>
                 </Form.Row>
             </Form>
