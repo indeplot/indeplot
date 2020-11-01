@@ -44,8 +44,6 @@ export default function CoordinateInput( props ) {
     const delCoord = (evt) => {
         evt.preventDefault()
         let coordIndex = coords.indexOf(coordsOption);
-        console.log('what is coordsOption', coordsOption, coordIndex);
-        
         var splitCoord = coordsOption.split(',');
         splitCoord[1] = parseInt(splitCoord[1]);
         coords.splice(coordIndex, 1);

@@ -89,15 +89,23 @@ export default class LineChart extends React.Component {
 
     deleteCoordinate (labelValue, dataValue)  {
         let aryLabels =  myLineChart.data.labels
-        let labelIndex = aryLabels.indexOf( labelValue )
+
+        let tempLabelIndexAry = aryLabels.map((e,i) => e ===labelValue ? i: undefined).filter(x => x);
+        console.log('tempLabelIndexAry',tempLabelIndexAry);
+        /* let labelIndex = aryLabels.indexOf( labelValue ) */
+
         let aryData =  myLineChart.data.datasets[0].data
-        let dataIndex = aryData.indexOf( dataValue )
-        const data = myLineChart.data.datasets[0].data;
-      if (labelIndex === dataIndex && (aryLabels[labelIndex] > -1) && (aryData[dataIndex] > -1) ) { 
-          aryLabels.splice(labelIndex, 1)  
-          aryData.splice(dataIndex, 1)
+        let tempDataIndexAry = aryData.map((e,i) => e === dataValue ? i: undefined).filter(x => x);
+        console.log('tempDataIndexAry',tempDataIndexAry);
+
+        const found = tempLabelIndexAry.filter(v => tempDataIndexAry.indexOf(v) !== -1)
+        console.log('found', found);
+
+      if (found > -1 -1 ) { 
+          aryLabels.splice(found, 1)  
+          aryData.splice(found, 1)
       }
-      myLineChart.update(); 
+      myLineChart.update();  
   
     }
 
@@ -105,7 +113,6 @@ export default class LineChart extends React.Component {
 
 
   render() {
-    /* onsole.log('inside LineChart: data', myLineChart.data.datasets[0].data) */
     
     return (
       <div>
