@@ -11,58 +11,6 @@ import SplashScreen from '../../Components/SplashScreen';
 
 
 class HomePage extends React.Component {
-    constructor(props) {
-        super(props)
-        /* this.state = {
-            chartData: {
-                labels: ["june", "july", "may"],
-                datasets: [
-                    {
-                        label: 'Label:  tracking rainfall',
-                        data: [10, 30, 50],
-                        coords:[],
-                        labelOptions: ["may", "june", "july", "aug"],
-                        backgroundColor: [
-                            'rgba(75, 192, 192, 0.6)'
-                        ],
-                      borderWidth: 4
-                     }
-                ],
-            },
-            options: {
-                legend: { position: "bottom"},
-                responsive: true,
-                title: {text: "title:of the whole chart", display: true},
-                scales: {
-                    yAxes: [
-                        {
-                            ticks: {
-                                autoSkip: true,
-                                maxTicksLimit: 10,
-                                beginAtZero: true
-                            },
-                            gridLines: {
-                                display:false
-                            }
-                        }
-                    ],
-                    xAxes: [
-                        {
-                            beginAtZero: true,
-                            ticks: {
-                                autoSkip:false
-                            },
-                            gridLines: {
-                                display:false
-                            }
-                        }
-                    ]
-                }
-
-            } 
-        } */
-
-    }
 
     /* handleRefreshData = () => {
         // `requiredDataPts` is adjustable, We can create an input box on UI to configure the total number of data points to display.
@@ -107,11 +55,6 @@ class HomePage extends React.Component {
                     updateChart={this.updateChart} 
                     onRefreshData={this.handleRefreshData} 
                 />
-               {/* <Line 
-                    ref = {(reference) => this.reference = reference} 
-                    data={this.state.chartData} 
-                    options={this.state.options}
-                 redraw/> */}
             </div>
             <div
                 style={{ marginBottom: '16px', border: '1px solid #eee', borderRadius: '8px', padding: '8px' }}

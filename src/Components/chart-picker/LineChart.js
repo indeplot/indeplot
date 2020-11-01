@@ -17,6 +17,7 @@ export default class LineChart extends React.Component {
 
     componenDidUpdate() {
         this.buildChart();
+        
     }
 
   buildChart = () => {
@@ -80,27 +81,23 @@ export default class LineChart extends React.Component {
     }
 
    addCoordinate(labelValue, dataValue) {
+       dataValue = parseInt(dataValue)
         myLineChart.data.labels.push(labelValue);
         myLineChart.data.datasets[0].data.push(dataValue);
-        myLineChart.update(); 
+        myLineChart.update();
     } 
 
     deleteCoordinate (labelValue, dataValue)  {
-        console.log('labelValue, dataValue', labelValue, dataValue);
-        const labels = myLineChart.data.labels;
+        let aryLabels =  myLineChart.data.labels
+        let labelIndex = aryLabels.indexOf( labelValue )
+        let aryData =  myLineChart.data.datasets[0].data
+        let dataIndex = aryData.indexOf( dataValue )
         const data = myLineChart.data.datasets[0].data;
-        console.log('indexes where labelValue matches in the labels array', labels.indexOf(labelValue));
-        console.log('indexes where dataValue matches in the data array', data.indexOf(dataValue));
-
-     /*  const coordIndex = myLineChart.data.datasets[0].findIndex(item => labels === labelValue && data.value === dataValue);
-      console.log('what is coordIndex', coordIndex)
-      if (coordIndex > -1) { 
-          myLineChart.data.datasets[0].data.splice(coordIndex, 1)
-          myLineChart.labels.splice(coordIndex, 1)
-         /*  currentChart.config.data.datasets[0].coords.splice(coordIndex, 1) 
-          
+      if (labelIndex === dataIndex && (aryLabels[labelIndex] > -1) && (aryData[dataIndex] > -1) ) { 
+          aryLabels.splice(labelIndex, 1)  
+          aryData.splice(dataIndex, 1)
       }
-      myLineChart.update();  */
+      myLineChart.update(); 
   
     }
 
@@ -108,7 +105,8 @@ export default class LineChart extends React.Component {
 
 
   render() {
-    console.log('inside LineChart', this.props)
+    /* onsole.log('inside LineChart: data', myLineChart.data.datasets[0].data) */
+    
     return (
       <div>
         <canvas id="myChart" ref={this.chartRef}  />

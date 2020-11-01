@@ -25,7 +25,7 @@ const chartTypeIcons = {
 
 class CharSelector extends Component {
     state = {
-        selected: 'Bar',
+        selected: 'Line',
         color: {
             r:'75',
             g:'192',
