@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState  } from 'react';
 import { useInput } from '../../hooks/input-hook';
 
 import { Form, Col } from 'react-bootstrap';
@@ -6,11 +6,8 @@ import { Form, Col } from 'react-bootstrap';
 export default function CoordinateInput( props ) {
 
     const [coords, setCoords] = useState([]);
-    const [labelTypes] = useState(['months of the year', 'days of the week', 'increments']);
-    const [selectedLabelType, setSelectedLabelType] = useState('increments');
+    const [labelTypes] = useState(['Months of the year', 'Days of the week', 'Increments']);
     const [labelsSelected, setLabelsSelected] = useState(['10','20', '30', '40', '50']);
-    const [labelsUpdated, setLabelsUpdated] = useState(false);
-    const [labelsSecondUpdate, setLabelsSecondUpdate] = useState(false);
 
     const { value:chartTitle, bind:bindChartTitle, reset:resetChartTitle } = useInput('');
     const { value:tracking, bind:bindTracking, reset:resetTracking } = useInput('');
@@ -21,7 +18,8 @@ export default function CoordinateInput( props ) {
          
     const handleTitleTrackingSubmit = (evt) => {
         evt.preventDefault();
-        props.addTitleTracking(chartTitle, tracking);
+        props.addTitleToState(chartTitle);
+        props.addTrackingLabelToState(tracking);
         resetChartTitle();
         resetTracking();
     }
@@ -31,15 +29,20 @@ export default function CoordinateInput( props ) {
         if ((labelValue === '' || undefined) || (dataValue === '' || undefined) ){
              alert('you need to choose a label and a y-value before adding');
         } else {
-            props.addCoordinate(labelValue, dataValue)
             let coord = {
                 label:labelValue,
                 data:dataValue 
             }
             let coordString = `${coord.label}, ${coord.data}`
-            setCoords([...coords,coordString]);
-            resetDataValue();
-            resetLabelValue();
+            
+            if (coords.find(el => el === coordString)) {
+                alert('no duplicates allowed, please select another combination.');
+            } else {
+                setCoords([...coords,coordString]);
+                props.addCoordToState(labelValue,dataValue)
+                resetDataValue();
+                resetLabelValue();
+            }  
 
         }
        
@@ -57,32 +60,21 @@ export default function CoordinateInput( props ) {
 
     const addLabelTypeOption = (evt) => {
         evt.preventDefault(); 
-      /*   let temp; */
         setLabelsSelected([])
-        setLabelsUpdated(true);
 
-       
         switch(labelTypeSelection) {
             
-            case 'months of the year':
-                setSelectedLabelType('months');
+            case 'Months of the year':
                 setLabelsSelected(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])
-                setLabelsSecondUpdate(true);
                 return;
-           case 'days of the week':
-                setSelectedLabelType('weekdays');
+            case 'Days of the week':
                 setLabelsSelected(['Sun','Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'])
-                setLabelsSecondUpdate(true);
                 return;
-            case 'increments':
-                setSelectedLabelType('increments');
+            case 'Increments':
                 setLabelsSelected(['10','20', '30', '40', '50'])
-                setLabelsSecondUpdate(true);
                 return; 
             default:
-                setSelectedLabelType('increments');
                 setLabelsSelected(['10','20', '30', '40', '50'])
-                setLabelsSecondUpdate(true);
                 return;
         }   
     }
@@ -113,6 +105,7 @@ export default function CoordinateInput( props ) {
                             <Form.Control
                                 type="text"
                                 style={{width:"42%", marginLeft:"5px", paddingLeft:"8px", border:"1px solid lightgray", borderRadius: "4px"}}
+                                className = "form-control input-sm"
                                 custom
                                 size="med"
                                 placeholder="Title"
@@ -122,7 +115,7 @@ export default function CoordinateInput( props ) {
                             <Form.Control
                                 type="text"
                                 style={{width:"42%", marginLeft:"5px", paddingLeft:"8px", border:"1px solid lightgray", borderRadius: "4px"}}
-                                custom
+                                className = "form-control input-sm"
                                 size="med"
                                 placeholder="Label"
                                 {...bindTracking}
@@ -145,6 +138,8 @@ export default function CoordinateInput( props ) {
                     <Form.Group as={Col} xs={6} className="d-flex p-2">
                         <Form.Control
                             as="select"
+                            style={{width:"84%", marginLeft:"5px", paddingLeft:"8px", border:"1px solid lightgray", borderRadius: "4px"}}
+                            className="form-control input-sm"
                             placeholder="Select label type"
                             {...bindLabelTypeSelection}
                         >
@@ -168,7 +163,8 @@ export default function CoordinateInput( props ) {
                     <Form.Group as={Col} xs={6} className="d-flex p-2">
                         <Form.Control 
                             as="select"
-                            style={{width:"42%", textAlign:"center"}}
+                            style={{width:"42%", marginLeft:"5px", border:"1px solid lightgray", borderRadius: "4px"}}
+                            className="form-control input-sm"
                             {...bindLabelValue}
                         >
                             <option disabled={true} value="">Labels</option>
@@ -176,8 +172,8 @@ export default function CoordinateInput( props ) {
                         </Form.Control>
                         <Form.Control
                             type="number"
-                            style={{width:"42%", marginLeft:"5px", textAlign:"center",border:"1px solid lightgray", borderRadius: "4px"}}
-                            custom
+                            style={{width:"42%", marginLeft:"5px", border:"1px solid lightgray", borderRadius: "4px"}}
+                            className="form-control input-sm"
                             size="med"
                             placeholder="Y"
                             {...bindDataValue}
@@ -201,6 +197,7 @@ export default function CoordinateInput( props ) {
                          <Form.Control 
                             as="select"
                             defaultValue=""
+                            className="form-control input-sm"
                             style={{width:"84%", textAlign:"center"}}
                             {...bindCoordsOption}
                         >

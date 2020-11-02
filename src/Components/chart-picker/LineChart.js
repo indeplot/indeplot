@@ -8,127 +8,128 @@ export default class LineChart extends React.Component {
     constructor(props) {
         super(props);
         this.chartRef = React.createRef();
+        this.state = { 
+            data:[],
+            labels:[],
+            title: "",
+            label: ""
+        }
+        this.addCoordToState = this.addCoordToState.bind(this);
+        this.addTitleToState = this.addTitleToState.bind(this);
+        this.addTrackingLabelToState = this.addTrackingLabelToState.bind(this);
+        this.deleteCoordinate = this.deleteCoordinate.bind(this);
+         
     }
     
 
     componentDidMount() {
-        this.buildChart();
+        let colorVal = `rgba(${this.props.color.r},${this.props.color.g},${this.props.color.b},${this.props.color.a}`;
+        this.buildChart(colorVal);
     }
 
-    componenDidUpdate() {
-        this.buildChart();
-        
-    }
-
-  buildChart = () => {
-      const myChartRef = this.chartRef.current.getContext("2d");
-      console.log('what is chartRef', myChartRef);
-      /* const { data, labels } = this.props; */
-
-      if (typeof myLineChart !== "undefined") myLineChart.destroy();
-
-      myLineChart = new Chart(myChartRef, {
-        type: 'line',
-        data: {
-            labels: [],
-            datasets: [
-                    {
-                    label: '',
-                    data: [],
-                    fill: false,
-                    backgroundColor: '#6610f2'
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            title: {text: "", display: true}, 
-            scales: {
-                yAxes: [
-                    {
-                        ticks: {
-                            autoSkip: false,
-                            maxTicksLimit: 10,
-                            beginAtZero: true
-                        },
-                        gridLines: {
-                            display:false
-                        }
-                    }
-                ],
-                xAxes: [
-                    {
-                        gridLines: {
-                            display:false
-                        }
-                    }
-                ]
-            }
-
-        }
-    }); 
-  }
-
-    addTitleTracking(chartTitle, tracking)  {
-        myLineChart.options.title.text = chartTitle
-        myLineChart.data.datasets[0].label = tracking
-        myLineChart.update(); 
-    }
-
-    addLabelValue (optionVal) {
-        myLineChart.data.datasets[0].labelOptions.push(optionVal)
-        myLineChart.update();
-    }
-
-   addCoordinate(labelValue, dataValue) {
-       dataValue = parseInt(dataValue)
-        myLineChart.data.labels.push(labelValue);
-        myLineChart.data.datasets[0].data.push(dataValue);
-        myLineChart.update();
+    componentDidUpdate() { 
+        let colorVal = `rgba(${this.props.color.r},${this.props.color.g},${this.props.color.b},${this.props.color.a}`;
+        this.buildChart(colorVal); 
     } 
 
+    buildChart = (colorVal) => {
+        const myChartRef = this.chartRef.current.getContext("2d");
+        if (typeof myLineChart !== "undefined") myLineChart.destroy();
+
+        myLineChart = new Chart(myChartRef, {
+            type: 'line',
+            data: {
+                labels: this.state.labels,
+                datasets: [
+                        {
+                        label: this.state.label,
+                        data: this.state.data,
+                        fill: true,
+                        backgroundColor: colorVal,
+                        borderColor: 'rgba(0,0,0,1)',
+                        borderWidth: 2,
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                title: {text: this.state.title, display: true}, 
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                autoSkip: false,
+                                maxTicksLimit: 10,
+                                beginAtZero: true
+                            },
+                            gridLines: {
+                                display:false
+                            }
+                        }
+                    ],
+                    xAxes: [
+                        {
+                            gridLines: {
+                                display:false
+                            }
+                        }
+                    ]
+                }
+
+            }
+        }); 
+    }
+
+    addTitleToState(chartTitle)  {
+        this.setState({title: chartTitle});
+       
+    }
+     addTrackingLabelToState(trackingLabel)  {
+        this.setState({label:trackingLabel})
+       
+    }
+
+
+    addCoordToState(labelElement, dataElement) {
+        this.setState(prevState => ({
+            labels: [...prevState.labels, labelElement]
+        }));
+        this.setState(prevState => ({
+            data: [...prevState.data, dataElement]
+        }));
+    }
+
+
     deleteCoordinate (labelValue, dataValue)  {
-        let aryLabels =  myLineChart.data.labels
+        let tempLabelIndexAry = this.state.labels.map((e,i) => e ===labelValue ? i: undefined).filter(x => x);
 
-        let tempLabelIndexAry = aryLabels.map((e,i) => e ===labelValue ? i: undefined).filter(x => x);
-        console.log('tempLabelIndexAry',tempLabelIndexAry);
-        /* let labelIndex = aryLabels.indexOf( labelValue ) */
+        let tempDataIndexAry = this.state.data.map((e,i) => e === dataValue ? i: undefined).filter(x => x);
 
-        let aryData =  myLineChart.data.datasets[0].data
-        let tempDataIndexAry = aryData.map((e,i) => e === dataValue ? i: undefined).filter(x => x);
-        console.log('tempDataIndexAry',tempDataIndexAry);
 
         const found = tempLabelIndexAry.filter(v => tempDataIndexAry.indexOf(v) !== -1)
-        console.log('found', found);
 
-      if (found > -1 -1 ) { 
-          aryLabels.splice(found, 1)  
-          aryData.splice(found, 1)
-      }
-      myLineChart.update();  
-  
+        if (found > -1 -1 ) { 
+            this.state.labels.splice(found, 1)  
+            this.state.data.splice(found, 1)
+        }
+        myLineChart.update();  
+
     }
 
 
 
 
-  render() {
-    
+  render() {  
+
     return (
       <div>
         <canvas id="myChart" ref={this.chartRef}  />
         <div>
               <CoordinateInput 
-                  addTitleTracking = {this.addTitleTracking}
-                  addCoordinate = {this.addCoordinate}
+                  addTitleToState = {this.addTitleToState}
+                  addTrackingLabelToState = {this.addTrackingLabelToState}
+                  addCoordToState = {this.addCoordToState}
                   deleteCoordinate = {this.deleteCoordinate}
-                 /*  addLabelValue = {this.addLabelValue} */
-                 /*  label = {myLineChart.data.datasets[0].label} */
-                /*   title = {myLineChart.options.title.text} */
-                 /* data = {this.state.chartData.datasets[0].data}
-                  labels={this.state.chartData.labels}
-                  coords={this.state.chartData.datasets[0].coords}
-                  labelOptions = {this.state.chartData.datasets[0].labelOptions}  */
               />
           </div>
         </div>
